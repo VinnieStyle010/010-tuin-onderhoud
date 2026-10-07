@@ -1,119 +1,85 @@
-/* =========================================================
+/* =========================================
    010 TUIN & ONDERHOUD
-   Homepage
-   ========================================================= */
+   HOME.CSS
+   Homepage onderdelen
+========================================= */
 
 
-/* ---------- DEMO BALK ---------- */
-
-.demo-bar {
-  padding: 8px 20px;
-
-  background: #e7f3e2;
-  color: var(--green-dark);
-
-  text-align: center;
-
-  font-size: 0.78rem;
-  font-weight: 800;
-
-  letter-spacing: 0.06em;
-}
-
-
-/* =========================================================
+/* =========================================
    HERO
-   ========================================================= */
+========================================= */
 
 .hero {
-  min-height: 670px;
+  position: relative;
+  min-height: 680px;
 
   display: flex;
   align-items: center;
-
-  position: relative;
 
   color: var(--white);
 
   background:
     linear-gradient(
       90deg,
-      rgba(5, 30, 18, 0.88) 0%,
-      rgba(5, 30, 18, 0.72) 48%,
-      rgba(5, 30, 18, 0.30) 100%
+      rgba(5, 45, 27, 0.92) 0%,
+      rgba(5, 45, 27, 0.70) 45%,
+      rgba(5, 45, 27, 0.38) 100%
     ),
-    url("https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1800&q=85");
-
-  background-size: cover;
-  background-position: center;
+    url("https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1800&q=85")
+    center / cover no-repeat;
 }
-
 
 .hero-content {
   position: relative;
   z-index: 2;
 
-  max-width: 760px;
+  max-width: 720px;
 
-  padding-top: 70px;
-  padding-bottom: 70px;
+  padding: 90px 0;
 }
 
-
-.hero-label {
+.hero-badge {
   display: inline-flex;
+  align-items: center;
 
-  margin-bottom: 22px;
-  padding: 8px 15px;
+  margin-bottom: 26px;
+  padding: 8px 16px;
 
-  border:
-    1px solid rgba(255, 255, 255, 0.22);
-
+  border: 1px solid rgba(115, 196, 88, 0.55);
   border-radius: 999px;
 
-  background:
-    rgba(255, 255, 255, 0.10);
+  background: rgba(115, 196, 88, 0.12);
 
-  color: #dff4d9;
+  color: var(--white);
 
   font-size: 0.9rem;
   font-weight: 700;
 }
 
-
 .hero h1 {
-  margin-bottom: 24px;
+  margin-bottom: 26px;
 
-  font-size: clamp(
-    3.3rem,
-    7vw,
-    6.2rem
-  );
+  color: var(--white);
 
-  line-height: 0.98;
-
-  letter-spacing: -0.045em;
+  letter-spacing: -0.04em;
 }
-
 
 .hero h1 span {
-  color: #8ed877;
+  display: block;
+  color: var(--green-light);
 }
 
-
-.hero-text {
+.hero p {
   max-width: 650px;
 
   margin-bottom: 34px;
 
-  color: #edf5ef;
+  color: rgba(255, 255, 255, 0.88);
 
-  font-size: 1.18rem;
-  line-height: 1.7;
+  font-size: 1.15rem;
 }
 
-
-.hero-buttons {
+.hero-actions {
   display: flex;
   flex-wrap: wrap;
 
@@ -121,87 +87,81 @@
 }
 
 
-/* =========================================================
-   VOORDELEN
-   ========================================================= */
+/* =========================================
+   USP BALK
+========================================= */
 
-.benefits {
-  position: relative;
-  z-index: 10;
-
+.usp-bar {
   background: var(--white);
 
-  box-shadow:
-    0 10px 35px rgba(0, 0, 0, 0.07);
+  border-bottom: 1px solid var(--border);
 }
 
-
-.benefits-grid {
-  min-height: 105px;
-
+.usp-grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(4, 1fr);
-
-  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
 }
 
-
-.benefits article {
-  padding: 20px;
+.usp-item {
+  padding: 26px 20px;
 
   text-align: center;
 }
 
-
-.benefits article + article {
-  border-left:
-    1px solid var(--border);
-}
-
-
-.benefits strong {
+.usp-item strong {
   display: block;
 
-  margin-bottom: 2px;
-
-  color: var(--green-dark);
-
-  font-size: 1.12rem;
+  color: var(--green);
+  font-size: 1rem;
 }
 
+.usp-item span {
+  display: block;
 
-.benefits span {
+  margin-top: 3px;
+
   color: var(--text-light);
-
-  font-size: 0.9rem;
+  font-size: 0.82rem;
 }
 
 
-/* =========================================================
+/* =========================================
    DIENSTEN
-   ========================================================= */
+========================================= */
+
+.services {
+  padding: 100px 0;
+
+  background: var(--off-white);
+}
+
+.section-heading {
+  max-width: 760px;
+
+  margin-bottom: 48px;
+}
+
+.section-heading h2 {
+  margin-bottom: 18px;
+}
+
+.section-heading p {
+  font-size: 1.05rem;
+}
 
 .services-grid {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
 
-  grid-template-columns:
-    repeat(3, 1fr);
-
-  gap: 25px;
+  gap: 24px;
 }
-
 
 .service-card {
   overflow: hidden;
 
-  border:
-    1px solid rgba(0, 0, 0, 0.04);
+  background: var(--white);
 
   border-radius: var(--radius);
-
-  background: var(--white);
 
   box-shadow: var(--shadow);
 
@@ -210,184 +170,152 @@
     box-shadow 0.25s ease;
 }
 
-
 .service-card:hover {
-  transform: translateY(-7px);
+  transform: translateY(-6px);
 
   box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.12);
+    0 18px 45px rgba(13, 59, 38, 0.14);
 }
 
-
-.service-image {
-  height: 245px;
-
-  background-size: cover;
-  background-position: center;
+.service-card img {
+  height: 240px;
+  object-fit: cover;
 }
-
-
-/* Tijdelijke demo-afbeeldingen.
-   Later vervangen we deze door lokale bestanden
-   in de map /images. */
-
-.service-maintenance {
-  background-image:
-    url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1000&q=85");
-}
-
-
-.service-construction {
-  background-image:
-    url("https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1000&q=85");
-}
-
-
-.service-pruning {
-  background-image:
-    url("https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1000&q=85");
-}
-
 
 .service-content {
   padding: 28px;
 }
 
-
 .service-content h3 {
-  margin-bottom: 10px;
-
-  color: var(--green-dark);
-
-  font-size: 1.45rem;
+  margin-bottom: 12px;
 }
-
 
 .service-content p {
-  color: var(--text-light);
+  font-size: 0.95rem;
 }
 
 
-/* =========================================================
+/* =========================================
    OVER ONS
-   ========================================================= */
+========================================= */
 
-.about-section {
-  background: #eaf3e7;
+.about {
+  padding: 110px 0;
+
+  background: var(--green-soft);
 }
-
 
 .about-grid {
   display: grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
-  gap: 75px;
+  grid-template-columns: 1fr 1fr;
 
   align-items: center;
+
+  gap: 70px;
 }
 
-
 .about-image {
-  min-height: 540px;
+  position: relative;
+}
+
+.about-image img {
+  height: 560px;
+
+  object-fit: cover;
 
   border-radius: var(--radius);
 
-  background:
-    url("https://images.unsplash.com/photo-1557429287-b2e26467fc2b?auto=format&fit=crop&w=1200&q=85");
-
-  background-size: cover;
-  background-position: center;
-
   box-shadow:
-    20px 20px 0 #cadfc4;
+    20px 20px 0 rgba(115, 196, 88, 0.20);
 }
 
+.about-content h2 {
+  margin-bottom: 22px;
+}
 
 .about-content > p {
-  margin-bottom: 20px;
-}
+  margin-bottom: 22px;
 
+  font-size: 1.02rem;
+}
 
 .check-list {
   display: grid;
 
-  gap: 13px;
+  gap: 15px;
 
   margin: 28px 0 32px;
-}
 
+  list-style: none;
+}
 
 .check-list li {
   position: relative;
 
-  padding-left: 34px;
+  padding-left: 30px;
+
+  color: var(--text);
 
   font-weight: 700;
 }
-
 
 .check-list li::before {
   content: "✓";
 
   position: absolute;
-
   left: 0;
-  top: -2px;
 
-  width: 24px;
-  height: 24px;
+  color: var(--green-light);
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: var(--green-light);
-
-  color: var(--green-dark);
-
-  font-size: 0.85rem;
+  font-size: 1.25rem;
   font-weight: 900;
 }
 
 
-/* =========================================================
+/* =========================================
    PROJECTEN
-   ========================================================= */
+========================================= */
+
+.projects {
+  padding: 105px 0;
+
+  background: var(--white);
+}
 
 .projects-grid {
   display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
 
-  grid-template-columns:
-    1.25fr 1fr 1fr;
-
-  gap: 20px;
+  gap: 18px;
 }
 
-
 .project-card {
-  min-height: 430px;
-
   position: relative;
+
+  min-height: 390px;
 
   overflow: hidden;
 
-  display: flex;
-  align-items: flex-end;
-
   border-radius: var(--radius);
-
-  background-size: cover;
-  background-position: center;
-
-  box-shadow: var(--shadow);
 }
 
+.project-card img {
+  position: absolute;
+  inset: 0;
 
-.project-card::before {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+.project-card::after {
   content: "";
 
   position: absolute;
@@ -396,254 +324,164 @@
   background:
     linear-gradient(
       to top,
-      rgba(5, 28, 17, 0.88),
-      rgba(5, 28, 17, 0.05) 65%
-    );
-
-  transition:
-    background 0.25s ease;
-}
-
-
-.project-card:hover::before {
-  background:
-    linear-gradient(
-      to top,
-      rgba(5, 28, 17, 0.92),
-      rgba(5, 28, 17, 0.16) 70%
+      rgba(5, 35, 22, 0.90),
+      transparent 65%
     );
 }
-
-
-.project-one {
-  background-image:
-    url("https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1200&q=85");
-}
-
-
-.project-two {
-  background-image:
-    url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1000&q=85");
-}
-
-
-.project-three {
-  background-image:
-    url("https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1000&q=85");
-}
-
 
 .project-info {
-  position: relative;
+  position: absolute;
+
+  left: 26px;
+  right: 26px;
+  bottom: 24px;
+
   z-index: 2;
 
-  width: 100%;
-
-  padding: 28px;
-
   color: var(--white);
 }
-
 
 .project-info h3 {
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 
-  font-size: 1.5rem;
+  color: var(--white);
 }
-
 
 .project-info p {
-  color: #d9e5dc;
+  color: rgba(255, 255, 255, 0.82);
 }
 
 
-/* =========================================================
-   VERTROUWEN
-   ========================================================= */
+/* =========================================
+   REVIEWS
+========================================= */
 
-.trust-section {
+.reviews {
+  padding: 100px 0;
+
   background: var(--green-dark);
+}
 
+.reviews .section-heading h2 {
   color: var(--white);
 }
 
-
-.section-heading.light h2 {
-  color: var(--white);
+.reviews .section-heading p {
+  color: rgba(255, 255, 255, 0.72);
 }
 
-
-.section-heading.light .section-label {
-  color: #8ed877;
-}
-
-
-.trust-cards {
+.reviews-grid {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
 
-  grid-template-columns:
-    repeat(3, 1fr);
-
-  gap: 22px;
+  gap: 24px;
 }
 
-
-.trust-cards article {
+.review-card {
   padding: 32px;
 
-  border:
-    1px solid rgba(255, 255, 255, 0.09);
+  border-radius: var(--radius);
 
-  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.055);
 
-  background:
+  border: 1px solid
     rgba(255, 255, 255, 0.06);
 }
 
+.stars {
+  margin-bottom: 20px;
 
-.trust-cards h3 {
-  margin-bottom: 12px;
+  color: #ffd65a;
 
-  color: #91d97b;
+  font-size: 1.25rem;
 
-  font-size: 1.35rem;
+  letter-spacing: 2px;
+}
+
+.review-card p {
+  margin-bottom: 22px;
+
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.review-card strong {
+  color: var(--white);
 }
 
 
-.trust-cards p {
-  color: #d5e2d8;
+/* =========================================
+   CTA / OFFERTE BLOK
+========================================= */
+
+.cta-section {
+  padding: 90px 0;
+
+  background: var(--white);
+}
+
+.cta-box {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 80px 40px;
+
+  border-radius: var(--radius);
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      rgba(7, 72, 42, 0.88),
+      rgba(7, 72, 42, 0.88)
+    ),
+    url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1600&q=85")
+    center / cover no-repeat;
+}
+
+.cta-box h2 {
+  margin-bottom: 18px;
+
+  color: var(--white);
+}
+
+.cta-box p {
+  max-width: 700px;
+
+  margin: 0 auto 28px;
+
+  color: rgba(255, 255, 255, 0.82);
 }
 
 
-/* =========================================================
+/* =========================================
    CONTACT
-   ========================================================= */
+========================================= */
+
+.contact {
+  padding: 105px 0;
+
+  background: var(--off-white);
+}
 
 .contact-grid {
   display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
 
-  grid-template-columns:
-    0.8fr 1.2fr;
-
-  gap: 75px;
+  gap: 70px;
 
   align-items: start;
 }
 
-
-.demo-contact {
-  margin-top: 30px;
-  padding: 25px;
-
-  border-left:
-    4px solid var(--green-light);
-
-  border-radius:
-    0 12px 12px 0;
-
-  background: #eef5eb;
+.contact-info h2 {
+  margin-bottom: 22px;
 }
 
-
-.demo-contact strong {
-  display: block;
-
-  margin-bottom: 12px;
-
-  color: var(--green-dark);
+.contact-info > p {
+  margin-bottom: 30px;
 }
 
-
-.demo-contact p {
-  margin: 4px 0;
-
-  color: var(--text-light);
-}
-
-
-.contact-form {
+.contact-details {
   display: grid;
 
-  gap: 18px;
-
-  padding: 35px;
-
-  border-radius: var(--radius);
-
-  background: var(--white);
-
-  box-shadow: var(--shadow);
-}
-
-
-.contact-form label {
-  display: grid;
-
-  gap: 7px;
-
-  color: var(--green-dark);
-
-  font-size: 0.9rem;
-  font-weight: 700;
-}
-
-
-.contact-form .button {
-  width: 100%;
-
-  border: 0;
-
-  margin-top: 4px;
-}
-
-
-.form-note {
-  color: var(--text-light);
-
-  font-size: 0.8rem;
-  text-align: center;
-}
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-.site-footer {
-  padding: 50px 0;
-
-  background: #071e13;
-
-  color: #aebfb3;
-}
-
-
-.footer-grid {
-  display: flex;
-
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 30px;
-}
-
-
-.site-footer strong {
-  color: var(--white);
-
-  font-size: 1.2rem;
-}
-
-
-.site-footer p {
-  margin-top: 4px;
-}
-
-
-/* =========================================================
-   KLEINE DETAILS
-   ========================================================= */
-
-section[id] {
-  scroll-margin-top: 100px;
-}
+  gap: 22
