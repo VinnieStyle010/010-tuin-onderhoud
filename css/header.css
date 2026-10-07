@@ -1,7 +1,30 @@
-/* =========================================================
+/* =========================================
    010 TUIN & ONDERHOUD
-   Header + navigatie
-   ========================================================= */
+   HEADER.CSS
+   Demo-balk + navigatie
+========================================= */
+
+
+/* ---------- DEMO-BALK ---------- */
+
+.demo-bar {
+  width: 100%;
+
+  padding: 9px 20px;
+
+  background: #082b1b;
+  color: rgba(255, 255, 255, 0.75);
+
+  text-align: center;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  letter-spacing: 0.05em;
+}
+
+
+/* ---------- HEADER ---------- */
 
 .site-header {
   position: sticky;
@@ -12,17 +35,15 @@
 
   background: var(--green-dark);
 
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+  box-shadow:
+    0 4px 18px rgba(0, 0, 0, 0.10);
 }
 
 
-/* ---------- HEADER CONTAINER ---------- */
+/* ---------- NAVIGATIE ---------- */
 
-.nav-container {
-  width: min(calc(100% - 40px), var(--container));
+.nav {
   min-height: 82px;
-
-  margin-inline: auto;
 
   display: flex;
   align-items: center;
@@ -38,14 +59,15 @@
   display: inline-flex;
   align-items: center;
 
+  white-space: nowrap;
+
   color: var(--white);
 
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   font-weight: 800;
 
-  white-space: nowrap;
+  letter-spacing: -0.02em;
 }
-
 
 .logo span {
   margin-left: 6px;
@@ -54,30 +76,44 @@
 }
 
 
-/* ---------- DESKTOP MENU ---------- */
+/* ---------- NAVIGATIE RECHTS ---------- */
 
-.desktop-nav {
+.nav-links {
   display: flex;
   align-items: center;
 
   gap: 34px;
+
+  list-style: none;
 }
 
 
-.desktop-nav a {
+/* ---------- NORMALE NAV-LINKS ---------- */
+
+.nav-links a:not(.nav-cta) {
   position: relative;
 
   color: var(--white);
 
+  font-size: 0.95rem;
   font-weight: 700;
 
+  opacity: 0.92;
+
   transition:
-    color 0.2s ease,
-    transform 0.2s ease;
+    opacity 0.2s ease,
+    color 0.2s ease;
+}
+
+.nav-links a:not(.nav-cta):hover {
+  opacity: 1;
+  color: var(--green-light);
 }
 
 
-.desktop-nav a:not(.nav-cta)::after {
+/* ---------- LIJNTJE ONDER LINK ---------- */
+
+.nav-links a:not(.nav-cta)::after {
   content: "";
 
   position: absolute;
@@ -93,186 +129,121 @@
   transition: width 0.2s ease;
 }
 
-
-.desktop-nav a:not(.nav-cta):hover {
-  color: var(--green-light);
-}
-
-
-.desktop-nav a:not(.nav-cta):hover::after {
+.nav-links a:not(.nav-cta):hover::after {
   width: 100%;
 }
 
 
 /* ---------- OFFERTE KNOP ---------- */
 
-.desktop-nav .nav-cta {
-  padding: 13px 20px;
+.nav-cta {
+  display: inline-flex;
 
-  border-radius: 9px;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+
+  padding: 0 22px;
+
+  border-radius: 8px;
 
   background: var(--green-light);
-  color: #10200f;
+  color: var(--green-dark);
+
+  font-size: 0.95rem;
+  font-weight: 800;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-
-.desktop-nav .nav-cta:hover {
-  background: #82d168;
-
+.nav-cta:hover {
   transform: translateY(-2px);
+
+  background: #82cf68;
+
+  box-shadow:
+    0 8px 20px rgba(115, 196, 88, 0.20);
 }
 
 
 /* ---------- MOBIELE MENUKNOP ---------- */
 
-.menu-button {
+.menu-toggle {
   display: none;
 
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 46px;
 
   padding: 0;
 
-  border: 0;
+  border: 1px solid
+    rgba(255, 255, 255, 0.18);
+
   border-radius: 8px;
 
-  background: transparent;
-
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-  gap: 5px;
-
-  cursor: pointer;
-}
-
-
-.menu-button span {
-  display: block;
-
-  width: 26px;
-  height: 3px;
-
-  border-radius: 3px;
-
-  background: var(--white);
-
-  transition:
-    transform 0.25s ease,
-    opacity 0.25s ease;
-}
-
-
-/* ---------- MOBIEL MENU ---------- */
-
-.mobile-nav {
-  display: none;
-
-  background: var(--green-dark);
-
-  border-top:
-    1px solid rgba(255, 255, 255, 0.1);
-}
-
-
-.mobile-nav.active {
-  display: block;
-}
-
-
-.mobile-nav a {
-  display: block;
-
-  padding: 16px 20px;
+  background:
+    rgba(255, 255, 255, 0.06);
 
   color: var(--white);
 
-  font-weight: 700;
+  align-items: center;
+  justify-content: center;
 
-  border-bottom:
-    1px solid rgba(255, 255, 255, 0.08);
+  font-size: 1.5rem;
 }
 
 
-.mobile-nav a:hover {
-  color: var(--green-light);
+/* ---------- HEADER OP KLEINERE SCHERMEN ---------- */
 
-  background:
-    rgba(255, 255, 255, 0.05);
-}
+@media (max-width: 800px) {
 
-
-/* ---------- HAMBURGER WORDT X ---------- */
-
-.menu-button.active span:nth-child(1) {
-  transform:
-    translateY(8px)
-    rotate(45deg);
-}
-
-
-.menu-button.active span:nth-child(2) {
-  opacity: 0;
-}
-
-
-.menu-button.active span:nth-child(3) {
-  transform:
-    translateY(-8px)
-    rotate(-45deg);
-}
-
-
-/* =========================================================
-   TABLET / MOBIEL
-   ========================================================= */
-
-@media (max-width: 850px) {
-
-  .nav-container {
-    min-height: 72px;
+  .nav {
+    min-height: 70px;
   }
 
-
-  .desktop-nav {
-    display: none;
+  .logo {
+    font-size: 1.15rem;
   }
 
-
-  .menu-button {
+  .menu-toggle {
     display: flex;
   }
 
+  .nav-links {
+    display: none;
 
-  .logo {
-    font-size: 1.25rem;
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    padding: 24px;
+
+    background: var(--green-dark);
+
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 22px;
+
+    box-shadow:
+      0 15px 25px rgba(0, 0, 0, 0.15);
   }
 
-}
-
-
-/* =========================================================
-   KLEINE TELEFOONS
-   ========================================================= */
-
-@media (max-width: 480px) {
-
-  .nav-container {
-    width: calc(100% - 28px);
-
-    min-height: 68px;
+  .nav-links.open {
+    display: flex;
   }
 
-
-  .logo {
-    font-size: 1.1rem;
+  .nav-links a {
+    display: block;
   }
 
-
-  .menu-button {
-    width: 44px;
-    height: 44px;
+  .nav-cta {
+    width: 100%;
   }
-
 }
