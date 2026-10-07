@@ -1,25 +1,23 @@
 /* =========================================
    010 TUIN & ONDERHOUD
    HEADER.CSS
-   Demo-balk + navigatie
+   Demo-balk + desktop/mobile navigatie
 ========================================= */
 
 
-/* ---------- DEMO-BALK ---------- */
+/* ---------- DEMO BALK ---------- */
 
 .demo-bar {
   width: 100%;
-
   padding: 9px 20px;
 
   background: #082b1b;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.78);
 
   text-align: center;
 
   font-size: 0.78rem;
   font-weight: 700;
-
   letter-spacing: 0.05em;
 }
 
@@ -36,13 +34,15 @@
   background: var(--green-dark);
 
   box-shadow:
-    0 4px 18px rgba(0, 0, 0, 0.10);
+    0 4px 18px rgba(0, 0, 0, 0.12);
 }
 
 
-/* ---------- NAVIGATIE ---------- */
+/* ---------- HEADER CONTAINER ---------- */
 
-.nav {
+.nav-container {
+  position: relative;
+
   min-height: 82px;
 
   display: flex;
@@ -56,10 +56,7 @@
 /* ---------- LOGO ---------- */
 
 .logo {
-  display: inline-flex;
-  align-items: center;
-
-  white-space: nowrap;
+  flex-shrink: 0;
 
   color: var(--white);
 
@@ -67,53 +64,44 @@
   font-weight: 800;
 
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 .logo span {
-  margin-left: 6px;
-
   color: var(--green-light);
 }
 
 
-/* ---------- NAVIGATIE RECHTS ---------- */
+/* ---------- DESKTOP NAVIGATIE ---------- */
 
-.nav-links {
+.desktop-nav {
   display: flex;
   align-items: center;
 
-  gap: 34px;
-
-  list-style: none;
+  gap: 30px;
 }
 
-
-/* ---------- NORMALE NAV-LINKS ---------- */
-
-.nav-links a:not(.nav-cta) {
+.desktop-nav a:not(.nav-cta) {
   position: relative;
 
-  color: var(--white);
+  color: rgba(255, 255, 255, 0.90);
 
   font-size: 0.95rem;
   font-weight: 700;
 
-  opacity: 0.92;
-
   transition:
-    opacity 0.2s ease,
-    color 0.2s ease;
+    color 0.2s ease,
+    opacity 0.2s ease;
 }
 
-.nav-links a:not(.nav-cta):hover {
-  opacity: 1;
+.desktop-nav a:not(.nav-cta):hover {
   color: var(--green-light);
 }
 
 
-/* ---------- LIJNTJE ONDER LINK ---------- */
+/* ---------- LIJNTJE BIJ HOVER ---------- */
 
-.nav-links a:not(.nav-cta)::after {
+.desktop-nav a:not(.nav-cta)::after {
   content: "";
 
   position: absolute;
@@ -129,7 +117,7 @@
   transition: width 0.2s ease;
 }
 
-.nav-links a:not(.nav-cta):hover::after {
+.desktop-nav a:not(.nav-cta):hover::after {
   width: 100%;
 }
 
@@ -172,7 +160,7 @@
 
 /* ---------- MOBIELE MENUKNOP ---------- */
 
-.menu-toggle {
+.menu-button {
   display: none;
 
   width: 46px;
@@ -180,28 +168,32 @@
 
   padding: 0;
 
-  border: 1px solid
-    rgba(255, 255, 255, 0.18);
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.18);
 
   border-radius: 8px;
 
   background:
-    rgba(255, 255, 255, 0.06);
+    rgba(255, 255, 255, 0.07);
 
   color: var(--white);
 
-  align-items: center;
-  justify-content: center;
+  font-size: 1.35rem;
 
-  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 
-/* ---------- HEADER OP KLEINERE SCHERMEN ---------- */
+/* =========================================
+   MOBIEL
+========================================= */
 
 @media (max-width: 800px) {
 
-  .nav {
+  .nav-container {
     min-height: 70px;
   }
 
@@ -209,41 +201,12 @@
     font-size: 1.15rem;
   }
 
-  .menu-toggle {
-    display: flex;
-  }
-
-  .nav-links {
+  .desktop-nav {
     display: none;
-
-    position: absolute;
-
-    top: 100%;
-    left: 0;
-    right: 0;
-
-    padding: 24px;
-
-    background: var(--green-dark);
-
-    flex-direction: column;
-    align-items: stretch;
-
-    gap: 22px;
-
-    box-shadow:
-      0 15px 25px rgba(0, 0, 0, 0.15);
   }
 
-  .nav-links.open {
-    display: flex;
+  .menu-button {
+    display: inline-flex;
   }
 
-  .nav-links a {
-    display: block;
-  }
-
-  .nav-cta {
-    width: 100%;
-  }
 }
