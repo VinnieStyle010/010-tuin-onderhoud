@@ -1,8 +1,95 @@
 /* =========================================
    010 TUIN & ONDERHOUD
    HOME.CSS
-   Homepage onderdelen
+   Exact afgestemd op index.html
 ========================================= */
+
+
+/* =========================================
+   ALGEMENE SECTIES
+========================================= */
+
+.section {
+  padding: 100px 0;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 48px;
+}
+
+.section-label {
+  margin-bottom: 12px;
+
+  color: var(--green);
+  font-size: 0.82rem;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  margin-bottom: 18px;
+}
+
+.section-heading > p:last-child {
+  font-size: 1.05rem;
+}
+
+
+/* =========================================
+   ALGEMENE KNOPPEN
+========================================= */
+
+.button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+
+  padding: 0 25px;
+
+  border: 0;
+  border-radius: 8px;
+
+  font-weight: 800;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  background: var(--green-light);
+  color: var(--green-dark);
+
+  box-shadow:
+    0 8px 22px rgba(115, 196, 88, 0.20);
+}
+
+.button-primary:hover {
+  background: #82cf68;
+}
+
+.button-secondary {
+  color: var(--white);
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.button-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
 
 
 /* =========================================
@@ -11,18 +98,17 @@
 
 .hero {
   position: relative;
+
   min-height: 680px;
 
   display: flex;
   align-items: center;
 
-  color: var(--white);
-
   background:
     linear-gradient(
       90deg,
       rgba(5, 45, 27, 0.92) 0%,
-      rgba(5, 45, 27, 0.70) 45%,
+      rgba(5, 45, 27, 0.72) 45%,
       rgba(5, 45, 27, 0.38) 100%
     ),
     url("https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1800&q=85")
@@ -33,24 +119,26 @@
   position: relative;
   z-index: 2;
 
-  max-width: 720px;
+  max-width: 760px;
 
   padding: 90px 0;
 }
 
-.hero-badge {
+.hero-label {
   display: inline-flex;
-  align-items: center;
 
-  margin-bottom: 26px;
-  padding: 8px 16px;
+  margin-bottom: 25px;
+  padding: 8px 15px;
 
-  border: 1px solid rgba(115, 196, 88, 0.55);
+  border:
+    1px solid rgba(115, 196, 88, 0.45);
+
   border-radius: 999px;
 
-  background: rgba(115, 196, 88, 0.12);
+  background:
+    rgba(115, 196, 88, 0.10);
 
-  color: var(--white);
+  color: rgba(255, 255, 255, 0.92);
 
   font-size: 0.9rem;
   font-weight: 700;
@@ -65,21 +153,20 @@
 }
 
 .hero h1 span {
-  display: block;
   color: var(--green-light);
 }
 
-.hero p {
+.hero-text {
   max-width: 650px;
 
   margin-bottom: 34px;
 
   color: rgba(255, 255, 255, 0.88);
 
-  font-size: 1.15rem;
+  font-size: 1.1rem;
 }
 
-.hero-actions {
+.hero-buttons {
   display: flex;
   flex-wrap: wrap;
 
@@ -88,39 +175,59 @@
 
 
 /* =========================================
-   USP BALK
+   VOORDELEN
 ========================================= */
 
-.usp-bar {
+.benefits {
   background: var(--white);
 
   border-bottom: 1px solid var(--border);
 }
 
-.usp-grid {
+.benefits-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+
+  grid-template-columns:
+    repeat(4, 1fr);
 }
 
-.usp-item {
-  padding: 26px 20px;
+.benefits article {
+  position: relative;
+
+  padding: 28px 20px;
 
   text-align: center;
 }
 
-.usp-item strong {
+.benefits article:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+
+  top: 25%;
+  right: 0;
+
+  width: 1px;
+  height: 50%;
+
+  background: var(--border);
+}
+
+.benefits strong {
   display: block;
 
-  color: var(--green);
+  color: var(--green-dark);
+
   font-size: 1rem;
 }
 
-.usp-item span {
+.benefits span {
   display: block;
 
   margin-top: 3px;
 
   color: var(--text-light);
+
   font-size: 0.82rem;
 }
 
@@ -129,29 +236,15 @@
    DIENSTEN
 ========================================= */
 
-.services {
-  padding: 100px 0;
-
+#diensten {
   background: var(--off-white);
-}
-
-.section-heading {
-  max-width: 760px;
-
-  margin-bottom: 48px;
-}
-
-.section-heading h2 {
-  margin-bottom: 18px;
-}
-
-.section-heading p {
-  font-size: 1.05rem;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-columns:
+    repeat(3, 1fr);
 
   gap: 24px;
 }
@@ -174,12 +267,39 @@
   transform: translateY(-6px);
 
   box-shadow:
-    0 18px 45px rgba(13, 59, 38, 0.14);
+    0 18px 45px
+    rgba(13, 59, 38, 0.14);
 }
 
-.service-card img {
-  height: 240px;
-  object-fit: cover;
+.service-image {
+  height: 245px;
+
+  background-position: center;
+  background-size: cover;
+}
+
+
+/* Tuinonderhoud */
+
+.service-maintenance {
+  background-image:
+    url("https://images.unsplash.com/photo-1599685315640-9ceab2f581ca?auto=format&fit=crop&w=1000&q=85");
+}
+
+
+/* Tuinaanleg */
+
+.service-construction {
+  background-image:
+    url("https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1000&q=85");
+}
+
+
+/* Snoeien */
+
+.service-pruning {
+  background-image:
+    url("https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?auto=format&fit=crop&w=1000&q=85");
 }
 
 .service-content {
@@ -199,15 +319,15 @@
    OVER ONS
 ========================================= */
 
-.about {
-  padding: 110px 0;
-
+.about-section {
   background: var(--green-soft);
 }
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
 
   align-items: center;
 
@@ -215,25 +335,24 @@
 }
 
 .about-image {
-  position: relative;
-}
-
-.about-image img {
-  height: 560px;
-
-  object-fit: cover;
+  min-height: 560px;
 
   border-radius: var(--radius);
 
+  background:
+    url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1200&q=85")
+    center / cover no-repeat;
+
   box-shadow:
-    20px 20px 0 rgba(115, 196, 88, 0.20);
+    20px 20px 0
+    rgba(115, 196, 88, 0.20);
 }
 
 .about-content h2 {
   margin-bottom: 22px;
 }
 
-.about-content > p {
+.about-content > p:not(.section-label) {
   margin-bottom: 22px;
 
   font-size: 1.02rem;
@@ -242,7 +361,7 @@
 .check-list {
   display: grid;
 
-  gap: 15px;
+  gap: 14px;
 
   margin: 28px 0 32px;
 
@@ -265,9 +384,9 @@
   position: absolute;
   left: 0;
 
-  color: var(--green-light);
+  color: var(--green);
 
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 900;
 }
 
@@ -276,15 +395,15 @@
    PROJECTEN
 ========================================= */
 
-.projects {
-  padding: 105px 0;
-
+#projecten {
   background: var(--white);
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
+
+  grid-template-columns:
+    1.5fr 1fr 1fr;
 
   gap: 18px;
 }
@@ -292,27 +411,21 @@
 .project-card {
   position: relative;
 
-  min-height: 390px;
+  min-height: 400px;
 
   overflow: hidden;
 
   border-radius: var(--radius);
+
+  background-position: center;
+  background-size: cover;
+
+  transition:
+    transform 0.25s ease;
 }
 
-.project-card img {
-  position: absolute;
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  transition: transform 0.4s ease;
-}
-
-.project-card:hover img {
-  transform: scale(1.05);
+.project-card:hover {
+  transform: translateY(-4px);
 }
 
 .project-card::after {
@@ -324,9 +437,24 @@
   background:
     linear-gradient(
       to top,
-      rgba(5, 35, 22, 0.90),
-      transparent 65%
+      rgba(5, 35, 22, 0.92),
+      rgba(5, 35, 22, 0.10) 70%
     );
+}
+
+.project-one {
+  background-image:
+    url("https://images.unsplash.com/photo-1558521558-037f1cb027c5?auto=format&fit=crop&w=1200&q=85");
+}
+
+.project-two {
+  background-image:
+    url("https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=1000&q=85");
+}
+
+.project-three {
+  background-image:
+    url("https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1000&q=85");
 }
 
 .project-info {
@@ -337,8 +465,6 @@
   bottom: 24px;
 
   z-index: 2;
-
-  color: var(--white);
 }
 
 .project-info h3 {
@@ -348,109 +474,57 @@
 }
 
 .project-info p {
-  color: rgba(255, 255, 255, 0.82);
+  color:
+    rgba(255, 255, 255, 0.78);
 }
 
 
 /* =========================================
-   REVIEWS
+   VERTROUWEN
 ========================================= */
 
-.reviews {
-  padding: 100px 0;
-
+.trust-section {
   background: var(--green-dark);
 }
 
-.reviews .section-heading h2 {
+.section-heading.light h2 {
   color: var(--white);
 }
 
-.reviews .section-heading p {
-  color: rgba(255, 255, 255, 0.72);
+.section-heading.light .section-label {
+  color: var(--green-light);
 }
 
-.reviews-grid {
+.trust-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-columns:
+    repeat(3, 1fr);
 
   gap: 24px;
 }
 
-.review-card {
+.trust-cards article {
   padding: 32px;
 
-  border-radius: var(--radius);
-
-  background: rgba(255, 255, 255, 0.055);
-
-  border: 1px solid
-    rgba(255, 255, 255, 0.06);
-}
-
-.stars {
-  margin-bottom: 20px;
-
-  color: #ffd65a;
-
-  font-size: 1.25rem;
-
-  letter-spacing: 2px;
-}
-
-.review-card p {
-  margin-bottom: 22px;
-
-  color: rgba(255, 255, 255, 0.82);
-}
-
-.review-card strong {
-  color: var(--white);
-}
-
-
-/* =========================================
-   CTA / OFFERTE BLOK
-========================================= */
-
-.cta-section {
-  padding: 90px 0;
-
-  background: var(--white);
-}
-
-.cta-box {
-  position: relative;
-
-  overflow: hidden;
-
-  padding: 80px 40px;
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
 
   border-radius: var(--radius);
-
-  text-align: center;
 
   background:
-    linear-gradient(
-      rgba(7, 72, 42, 0.88),
-      rgba(7, 72, 42, 0.88)
-    ),
-    url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1600&q=85")
-    center / cover no-repeat;
+    rgba(255, 255, 255, 0.055);
 }
 
-.cta-box h2 {
-  margin-bottom: 18px;
+.trust-cards h3 {
+  margin-bottom: 14px;
 
   color: var(--white);
 }
 
-.cta-box p {
-  max-width: 700px;
-
-  margin: 0 auto 28px;
-
-  color: rgba(255, 255, 255, 0.82);
+.trust-cards p {
+  color:
+    rgba(255, 255, 255, 0.72);
 }
 
 
@@ -458,30 +532,166 @@
    CONTACT
 ========================================= */
 
-.contact {
-  padding: 105px 0;
-
+#contact {
   background: var(--off-white);
 }
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
+
+  grid-template-columns:
+    0.8fr 1.2fr;
 
   gap: 70px;
 
   align-items: start;
 }
 
-.contact-info h2 {
+.contact-intro h2 {
   margin-bottom: 22px;
 }
 
-.contact-info > p {
-  margin-bottom: 30px;
+.contact-intro > p:not(.section-label) {
+  margin-bottom: 28px;
 }
 
-.contact-details {
-  display: grid;
+.demo-contact {
+  margin-top: 32px;
 
-  gap: 22
+  padding: 24px;
+
+  border-radius: 12px;
+
+  background: var(--green-soft);
+}
+
+.demo-contact strong {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: var(--green-dark);
+}
+
+.demo-contact p {
+  margin: 4px 0;
+}
+
+
+/* =========================================
+   CONTACTFORMULIER
+========================================= */
+
+.contact-form {
+  padding: 34px;
+
+  background: var(--white);
+
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow);
+}
+
+.contact-form label {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: var(--text);
+
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  display: block;
+
+  width: 100%;
+
+  margin-top: 7px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 8px;
+
+  background: var(--white);
+
+  color: var(--text);
+}
+
+.contact-form input,
+.contact-form select {
+  min-height: 56px;
+
+  padding: 0 15px;
+}
+
+.contact-form textarea {
+  min-height: 150px;
+
+  padding: 15px;
+
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: var(--green-light);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(115, 196, 88, 0.15);
+
+  outline: none;
+}
+
+.contact-form .button {
+  width: 100%;
+}
+
+.form-note {
+  margin-top: 14px;
+
+  text-align: center;
+
+  font-size: 0.78rem;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+  padding: 48px 0;
+
+  background: #062b1a;
+
+  color: var(--white);
+}
+
+.footer-grid {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.site-footer strong {
+  display: block;
+
+  margin-bottom: 4px;
+}
+
+.site-footer p {
+  color:
+    rgba(255, 255, 255, 0.62);
+
+  font-size: 0.88rem;
+}
