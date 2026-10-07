@@ -12,15 +12,17 @@
 
   background: var(--green-dark);
 
-  box-shadow:
-    0 2px 12px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
 }
 
 
-/* ---------- NAVIGATIE ---------- */
+/* ---------- HEADER CONTAINER ---------- */
 
-.navbar {
+.nav-container {
+  width: min(calc(100% - 40px), var(--container));
   min-height: 82px;
+
+  margin-inline: auto;
 
   display: flex;
   align-items: center;
@@ -52,9 +54,9 @@
 }
 
 
-/* ---------- MENU ---------- */
+/* ---------- DESKTOP MENU ---------- */
 
-.nav-menu {
+.desktop-nav {
   display: flex;
   align-items: center;
 
@@ -62,7 +64,7 @@
 }
 
 
-.nav-menu a {
+.desktop-nav a {
   position: relative;
 
   color: var(--white);
@@ -70,11 +72,12 @@
   font-weight: 700;
 
   transition:
-    color 0.2s ease;
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 
-.nav-menu > a:not(.nav-cta)::after {
+.desktop-nav a:not(.nav-cta)::after {
   content: "";
 
   position: absolute;
@@ -87,38 +90,33 @@
 
   background: var(--green-light);
 
-  transition:
-    width 0.2s ease;
+  transition: width 0.2s ease;
 }
 
 
-.nav-menu > a:not(.nav-cta):hover {
+.desktop-nav a:not(.nav-cta):hover {
   color: var(--green-light);
 }
 
 
-.nav-menu > a:not(.nav-cta):hover::after {
+.desktop-nav a:not(.nav-cta):hover::after {
   width: 100%;
 }
 
 
 /* ---------- OFFERTE KNOP ---------- */
 
-.nav-menu .nav-cta {
+.desktop-nav .nav-cta {
   padding: 13px 20px;
 
   border-radius: 9px;
 
   background: var(--green-light);
   color: #10200f;
-
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease;
 }
 
 
-.nav-menu .nav-cta:hover {
+.desktop-nav .nav-cta:hover {
   background: #82d168;
 
   transform: translateY(-2px);
@@ -127,29 +125,30 @@
 
 /* ---------- MOBIELE MENUKNOP ---------- */
 
-.menu-toggle {
+.menu-button {
   display: none;
 
   width: 48px;
   height: 48px;
+
+  padding: 0;
 
   border: 0;
   border-radius: 8px;
 
   background: transparent;
 
-  color: var(--white);
-
   align-items: center;
   justify-content: center;
-
   flex-direction: column;
 
   gap: 5px;
+
+  cursor: pointer;
 }
 
 
-.menu-toggle span {
+.menu-button span {
   display: block;
 
   width: 26px;
@@ -165,109 +164,115 @@
 }
 
 
-/* ---------- TABLET / MOBIEL ---------- */
+/* ---------- MOBIEL MENU ---------- */
+
+.mobile-nav {
+  display: none;
+
+  background: var(--green-dark);
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.mobile-nav.active {
+  display: block;
+}
+
+
+.mobile-nav a {
+  display: block;
+
+  padding: 16px 20px;
+
+  color: var(--white);
+
+  font-weight: 700;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.mobile-nav a:hover {
+  color: var(--green-light);
+
+  background:
+    rgba(255, 255, 255, 0.05);
+}
+
+
+/* ---------- HAMBURGER WORDT X ---------- */
+
+.menu-button.active span:nth-child(1) {
+  transform:
+    translateY(8px)
+    rotate(45deg);
+}
+
+
+.menu-button.active span:nth-child(2) {
+  opacity: 0;
+}
+
+
+.menu-button.active span:nth-child(3) {
+  transform:
+    translateY(-8px)
+    rotate(-45deg);
+}
+
+
+/* =========================================================
+   TABLET / MOBIEL
+   ========================================================= */
 
 @media (max-width: 850px) {
 
-  .navbar {
+  .nav-container {
     min-height: 72px;
   }
 
 
-  .menu-toggle {
-    display: flex;
-  }
-
-
-  .nav-menu {
-    position: absolute;
-
-    top: 72px;
-    left: 0;
-    right: 0;
-
-    display: none;
-
-    flex-direction: column;
-    align-items: stretch;
-
-    gap: 0;
-
-    padding:
-      15px
-      max(20px, calc((100% - var(--container)) / 2));
-
-    background: var(--green-dark);
-
-    border-top:
-      1px solid rgba(255, 255, 255, 0.1);
-
-    box-shadow:
-      0 15px 25px rgba(0, 0, 0, 0.15);
-  }
-
-
-  .nav-menu.active {
-    display: flex;
-  }
-
-
-  .nav-menu > a {
-    width: 100%;
-
-    padding: 15px 10px;
-  }
-
-
-  .nav-menu > a:not(.nav-cta)::after {
+  .desktop-nav {
     display: none;
   }
 
 
-  .nav-menu .nav-cta {
-    margin-top: 8px;
-
-    text-align: center;
+  .menu-button {
+    display: flex;
   }
 
 
-  /* hamburger verandert in X */
-
-  .menu-toggle.active span:nth-child(1) {
-    transform:
-      translateY(8px)
-      rotate(45deg);
+  .logo {
+    font-size: 1.25rem;
   }
 
-
-  .menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-
-  .menu-toggle.active span:nth-child(3) {
-    transform:
-      translateY(-8px)
-      rotate(-45deg);
-  }
 }
 
 
-/* ---------- KLEINE TELEFOONS ---------- */
+/* =========================================================
+   KLEINE TELEFOONS
+   ========================================================= */
 
 @media (max-width: 480px) {
 
-  .logo {
-    font-size: 1.15rem;
-  }
+  .nav-container {
+    width: calc(100% - 28px);
 
-
-  .navbar {
     min-height: 68px;
   }
 
 
-  .nav-menu {
-    top: 68px;
+  .logo {
+    font-size: 1.1rem;
   }
+
+
+  .menu-button {
+    width: 44px;
+    height: 44px;
+  }
+
 }
