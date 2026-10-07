@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>010 Tuin & Onderhoud | Hovenier Rotterdam</title>
+  <meta name="description" content="Professioneel tuinonderhoud, tuinaanleg en snoeiwerk in Rotterdam en omgeving. Vraag vrijblijvend een offerte aan.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #17251d;
+      background: #f8faf7;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    /* NAVIGATIE */
+
+    header {
+      background: rgba(14, 40, 25, 0.97);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0,0,0,.15);
+    }
+
+    nav {
+      min-height: 74px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .logo {
+      color: white;
+      font-size: 23px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #79c267;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .nav-links a:hover {
+      color: #8ed17c;
+    }
+
+    .nav-button {
+      background: #6bb657;
+      padding: 11px 18px;
+      border-radius: 7px;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      color: white;
+      background:
+        linear-gradient(rgba(7,30,17,.72), rgba(7,30,17,.72)),
+        url("https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    }
+
+    .hero-content {
+      max-width: 720px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: rgba(125,196,104,.18);
+      border: 1px solid rgba(150,220,130,.45);
+      padding: 7px 14px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      font-size: clamp(44px, 7vw, 76px);
+      line-height: 1.02;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: #92d77f;
+    }
+
+    .hero p {
+      font-size: 19px;
+      max-width: 630px;
+      margin-bottom: 32px;
+      color: #eef6eb;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: .2s;
+    }
+
+    .btn-primary {
+      background: #72be5d;
+      color: #102518;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #87d171;
+    }
+
+    .btn-secondary {
+      color: white;
+      border: 1px solid rgba(255,255,255,.6);
+      background: rgba(255,255,255,.08);
+    }
+
+    /* TRUST BAR */
+
+    .trust {
+      background: white;
+      box-shadow: 0 8px 30px rgba(0,0,0,.07);
+    }
+
+    .trust-grid {
+      min-height: 100px;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      align-items: center;
+      text-align: center;
+      gap: 15px;
+    }
+
+    .trust strong {
+      display: block;
+      color: #285b36;
+      font-size: 18px;
+    }
+
+    .trust span {
+      font-size: 13px;
+      color: #647067;
+    }
+
+    /* ALGEMEEN */
+
+    section {
+      padding: 95px 0;
+    }
+
+    .section-title {
+      max-width: 680px;
+      margin-bottom: 48px;
+    }
+
+    .section-title small {
+      color: #5b9f49;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(34px, 5vw, 48px);
+      line-height: 1.1;
+      margin: 10px 0 15px;
+    }
+
+    .section-title p {
+      color: #667168;
+    }
+
+    /* DIENSTEN */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 22px;
+    }
+
+    .service {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 10px 35px rgba(30,60,40,.08);
+      transition: .25s;
+    }
+
+    .service:hover {
+      transform: translateY(-6px);
+    }
+
+    .service img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .service-content {
+      padding: 26px;
+    }
+
+    .service h3 {
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .service p {
+      color: #68736a;
+    }
+
+    /* OVER ONS */
+
+    .about {
+      background: #eaf1e7;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 20px 20px 0 #cbdcc5;
+    }
+
+    .about h2 {
+      font-size: 45px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      color: #59655d;
+      margin-bottom: 20px;
+    }
+
+    .checks {
+      display: grid;
+      gap: 12px;
+      margin: 25px 0;
+    }
+
+    .check {
+      font-weight: 700;
+    }
+
+    .check::before {
+      content: "✓";
+      color: #4c913d;
+      font-size: 20px;
+      margin-right: 10px;
+    }
+
+    /* PROJECTEN */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr .8fr;
+      gap: 18px;
+    }
+
+    .project {
+      position: relative;
+      min-height: 380px;
+      overflow: hidden;
+      border-radius: 14px;
+    }
+
+    .project img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      transition: .4s;
+    }
+
+    .project:hover img {
+      transform: scale(1.05);
+    }
+
+    .project-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 25px;
+      color: white;
+      background: linear-gradient(transparent 40%, rgba(8,28,16,.9));
+    }
+
+    /* REVIEWS */
+
+    .reviews {
+      background: #102b1b;
+      color: white;
+    }
+
+    .reviews .section-title p {
+      color: #c6d3c9;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .review {
+      padding: 30px;
+      border-radius: 12px;
+      background: #183924;
+    }
+
+    .stars {
+      color: #f3ce59;
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    .review p {
+      color: #dce6de;
+      margin-bottom: 18px;
+    }
+
+    /* CTA */
+
+    .cta {
+      text-align: center;
+    }
+
+    .cta-box {
+      padding: 70px 30px;
+      color: white;
+      border-radius: 18px;
+      background:
+        linear-gradient(rgba(15,65,34,.9),rgba(15,65,34,.9)),
+        url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+    }
+
+    .cta h2 {
+      font-size: clamp(34px,5vw,52px);
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+      color: #e8f4e8;
+    }
+
+    /* CONTACT */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 60px;
+    }
+
+    .contact-info h2 {
+      font-size: 42px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .contact-item {
+      margin: 20px 0;
+    }
+
+    form {
+      display: grid;
+      gap: 15px;
+      background: white;
+      padding: 32px;
+      border-radius: 14px;
+      box-shadow: 0 10px 35px rgba(0,0,0,.07);
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ccd4cd;
+      border-radius: 7px;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    button {
+      border: 0;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #0c2014;
+      color: #b9c8bd;
+      padding: 45px 0;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: center;
+    }
+
+    footer strong {
+      color: white;
+      font-size: 20px;
+    }
+
+    /* MOBIEL */
+
+    @media(max-width: 800px) {
+
+      .nav-links a:not(.nav-button) {
+        display: none;
+      }
+
+      .hero {
+        min-height: 580px;
+      }
+
+      .trust-grid {
+        grid-template-columns: repeat(2,1fr);
+        padding: 25px 0;
+      }
+
+      .services-grid,
+      .review-grid,
+      .projects-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        gap: 45px;
+      }
+
+      .about img {
+        height: 380px;
+      }
+
+      .project {
+        min-height: 320px;
+      }
+
+      .footer-grid {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a class="logo" href="#">010 <span>Tuin & Onderhoud</span></a>
+
+      <div class="nav-links">
+        <a href="#diensten">Diensten</a>
+        <a href="#over">Over ons</a>
+        <a href="#projecten">Projecten</a>
+        <a href="#contact" class="nav-button">Offerte aanvragen</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+
+      <div class="eyebrow">🌿 Hovenier in Rotterdam & omgeving</div>
+
+      <h1>
+        Uw tuin.<br>
+        <span>Onze zorg.</span>
+      </h1>
+
+      <p>
+        Van regelmatig tuinonderhoud tot een compleet nieuwe tuin.
+        010 Tuin & Onderhoud zorgt voor een buitenruimte waar u
+        iedere dag van kunt genieten.
+      </p>
+
+      <div class="buttons">
+        <a href="#contact" class="btn btn-primary">
+          Gratis offerte aanvragen
+        </a>
+
+        <a href="#projecten" class="btn btn-secondary">
+          Bekijk onze projecten
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<div class="trust">
+  <div class="container trust-grid">
+
+    <div>
+      <strong>Rotterdam</strong>
+      <span>& omgeving</span>
+    </div>
+
+    <div>
+      <strong>Vrijblijvend</strong>
+      <span>offerte aanvragen</span>
+    </div>
+
+    <div>
+      <strong>Persoonlijk</strong>
+      <span>contact & advies</span>
+    </div>
+
+    <div>
+      <strong>Vakkundig</strong>
+      <span>tuinwerk uitgevoerd</span>
+    </div>
+
+  </div>
+</div>
+
+
+<section id="diensten">
+  <div class="container">
+
+    <div class="section-title">
+      <small>Onze diensten</small>
+      <h2>Alles voor een tuin die er goed bij ligt</h2>
+      <p>
+        Groot of klein: wij helpen met onderhoud, aanleg en
+        verschillende werkzaamheden rondom uw tuin.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <article class="service">
+        <img
+          src="https://images.unsplash.com/photo-1599685315640-9ceab2f581ca?auto=format&fit=crop&w=900&q=80"
+          alt="Tuinonderhoud">
+
+        <div class="service-content">
+          <h3>Tuinonderhoud</h3>
+          <p>
+            Periodiek of eenmalig onderhoud zodat uw tuin
+            netjes, gezond en verzorgd blijft.
+          </p>
+        </div>
+      </article>
+
+
+      <article class="service">
+        <img
+          src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=900&q=80"
+          alt="Tuinaanleg">
+
+        <div class="service-content">
+          <h3>Tuinaanleg</h3>
+          <p>
+            Van het eerste idee tot bestrating, beplanting
+            en de complete inrichting van uw nieuwe tuin.
+          </p>
+        </div>
+      </article>
+
+
+      <article class="service">
+        <img
+          src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=900&q=80"
+          alt="Snoeiwerk">
+
+        <div class="service-content">
+          <h3>Snoeien & opruimen</h3>
+          <p>
+            Hagen, struiken en ander groen weer netjes,
+            inclusief het opruimen van groenafval.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="about" id="over">
+  <div class="container about-grid">
+
+    <img
+      src="https://images.unsplash.com/photo-1557429287-b2e26467fc2b?auto=format&fit=crop&w=1000&q=80"
+      alt="Hovenier aan het werk">
+
+    <div>
+
+      <div class="section-title" style="margin-bottom:20px">
+        <small>010 Tuin & Onderhoud</small>
+      </div>
+
+      <h2>Goed werk begint met luisteren.</h2>
+
+      <p>
+        Geen tuin en geen klant is hetzelfde. Daarom bespreken
+        we eerst uw wensen en kijken we samen naar een praktische
+        oplossing die past bij uw tuin en budget.
+      </p>
+
+      <p>
+        Heldere afspraken, persoonlijk contact en een verzorgd
+        eindresultaat staan daarbij centraal.
+      </p>
+
+      <div class="checks">
+        <div class="check">Duidelijke afspraken vooraf</div>
+        <div class="check">Netjes en zorgvuldig werken</div>
+        <div class="check">Voor particuliere en zakelijke klanten</div>
+        <div class="check">Werkzaam in Rotterdam en omgeving</div>
+      </div>
+
+      <a href="#contact" class="btn btn-primary">
+        Bespreek uw tuin
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="projecten">
+  <div class="container">
+
+    <div class="section-title">
+      <small>Projecten</small>
+      <h2>Een kijkje in ons werk</h2>
+      <p>
+        Van onderhoud tot complete tuinvernieuwing.
+      </p>
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project">
+        <img
+          src="https://images.unsplash.com/photo-1558521958-0a228e77e984?auto=format&fit=crop&w=1000&q=80"
+          alt="Moderne achtertuin">
+
+        <div class="project-overlay">
+          <h3>Complete achtertuin</h3>
+          <p>Rotterdam</p>
+        </div>
+      </div>
+
+
+      <div class="project">
+        <img
+          src="https://images.unsplash.com/photo-1584738766473-61c083514bf4?auto=format&fit=crop&w=800&q=80"
+          alt="Tuinonderhoud">
+
+        <div class="project-overlay">
+          <h3>Onderhoud</h3>
+          <p>IJsselmonde</p>
+        </div>
+      </div>
+
+
+      <div class="project">
+        <img
+          src="https://images.unsplash.com/photo-1558293842-c0fd3db86157?auto=format&fit=crop&w=800&q=80"
+          alt="Groene tuin">
+
+        <div class="project-overlay">
+          <h3>Nieuwe beplanting</h3>
+          <p>Rotterdam-Zuid</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="reviews">
+  <div class="container">
+
+    <div class="section-title">
+      <small>Ervaringen</small>
+      <h2>Wat klanten over ons zeggen</h2>
+      <p>Persoonlijke service en een resultaat waar u blij van wordt.</p>
+    </div>
+
+    <div class="review-grid">
+
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>
+          “Onze tuin ziet er eindelijk weer fantastisch uit.
+          Netjes gewerkt en duidelijke communicatie.”
+        </p>
+        <strong>— Familie De Jong</strong>
+      </div>
+
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>
+          “Snel geholpen met het snoeien en opruimen van onze
+          achtertuin. Alles keurig achtergelaten.”
+        </p>
+        <strong>— M. van Dijk</strong>
+      </div>
+
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>
+          “Goed meegedacht over onze nieuwe tuin en het resultaat
+          is precies geworden zoals we wilden.”
+        </p>
+        <strong>— S. Vermeer</strong>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="cta">
+  <div class="container">
+
+    <div class="cta-box">
+
+      <h2>Klaar om uw tuin aan te pakken?</h2>
+
+      <p>
+        Vertel ons wat u wilt laten doen en ontvang vrijblijvend
+        een voorstel voor uw tuin.
+      </p>
+
+      <a href="#contact" class="btn btn-primary">
+        Vraag een gratis offerte aan
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="contact">
+  <div class="container contact-grid">
+
+    <div class="contact-info">
+
+      <div class="section-title" style="margin-bottom:15px">
+        <small>Contact</small>
+      </div>
+
+      <h2>Vertel ons over uw tuin.</h2>
+
+      <p>
+        Vul het formulier in. Wij nemen zo snel mogelijk
+        contact met u op om uw wensen te bespreken.
+      </p>
+
+      <div class="contact-item">
+        <strong>📍 Werkgebied</strong><br>
+        Rotterdam en omgeving
+      </div>
+
+      <div class="contact-item">
+        <strong>📞 Telefoon</strong><br>
+        010 - 123 45 67
+      </div>
+
+      <div class="contact-item">
+        <strong>✉️ E-mail</strong><br>
+        info@010tuinenonderhoud.nl
+      </div>
+
+    </div>
+
+
+    <form onsubmit="demoForm(event)">
+
+      <input
+        type="text"
+        placeholder="Uw naam"
+        required>
+
+      <input
+        type="email"
+        placeholder="E-mailadres"
+        required>
+
+      <input
+        type="tel"
+        placeholder="Telefoonnummer">
+
+      <select required>
+        <option value="">Waar kunnen we mee helpen?</option>
+        <option>Tuinonderhoud</option>
+        <option>Tuinaanleg</option>
+        <option>Snoeiwerk</option>
+        <option>Anders</option>
+      </select>
+
+      <textarea
+        placeholder="Vertel kort wat u wilt laten doen..."
+        required></textarea>
+
+      <button class="btn btn-primary" type="submit">
+        Offerte aanvragen
+      </button>
+
+      <small>
+        Demoformulier — voor een echte klant koppelen we dit
+        aan e-mail of een formulierenservice.
+      </small>
+
+    </form>
+
+  </div>
+</section>
+
+</main>
+
+
+<footer>
+  <div class="container footer-grid">
+
+    <div>
+      <strong>010 Tuin & Onderhoud</strong><br>
+      Uw tuin. Onze zorg.
+    </div>
+
+    <div>
+      © <span id="year"></span> 010 Tuin & Onderhoud
+    </div>
+
+  </div>
+</footer>
+
+
+<script>
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+  function demoForm(event) {
+    event.preventDefault();
+
+    alert(
+      "Bedankt! Dit is een demonstratieformulier. " +
+      "Op een echte klantwebsite wordt de aanvraag daadwerkelijk verzonden."
+    );
+  }
+</script>
+
+</body>
+</html>
