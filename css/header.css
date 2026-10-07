@@ -1,0 +1,273 @@
+/* =========================================================
+   010 TUIN & ONDERHOUD
+   Header + navigatie
+   ========================================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+
+  background: var(--green-dark);
+
+  box-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ---------- NAVIGATIE ---------- */
+
+.navbar {
+  min-height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+
+/* ---------- LOGO ---------- */
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+
+  color: var(--white);
+
+  font-size: 1.45rem;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+
+.logo span {
+  margin-left: 6px;
+
+  color: var(--green-light);
+}
+
+
+/* ---------- MENU ---------- */
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+
+  gap: 34px;
+}
+
+
+.nav-menu a {
+  position: relative;
+
+  color: var(--white);
+
+  font-weight: 700;
+
+  transition:
+    color 0.2s ease;
+}
+
+
+.nav-menu > a:not(.nav-cta)::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 2px;
+
+  background: var(--green-light);
+
+  transition:
+    width 0.2s ease;
+}
+
+
+.nav-menu > a:not(.nav-cta):hover {
+  color: var(--green-light);
+}
+
+
+.nav-menu > a:not(.nav-cta):hover::after {
+  width: 100%;
+}
+
+
+/* ---------- OFFERTE KNOP ---------- */
+
+.nav-menu .nav-cta {
+  padding: 13px 20px;
+
+  border-radius: 9px;
+
+  background: var(--green-light);
+  color: #10200f;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.nav-menu .nav-cta:hover {
+  background: #82d168;
+
+  transform: translateY(-2px);
+}
+
+
+/* ---------- MOBIELE MENUKNOP ---------- */
+
+.menu-toggle {
+  display: none;
+
+  width: 48px;
+  height: 48px;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: var(--white);
+
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+
+.menu-toggle span {
+  display: block;
+
+  width: 26px;
+  height: 3px;
+
+  border-radius: 3px;
+
+  background: var(--white);
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+
+/* ---------- TABLET / MOBIEL ---------- */
+
+@media (max-width: 850px) {
+
+  .navbar {
+    min-height: 72px;
+  }
+
+
+  .menu-toggle {
+    display: flex;
+  }
+
+
+  .nav-menu {
+    position: absolute;
+
+    top: 72px;
+    left: 0;
+    right: 0;
+
+    display: none;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 0;
+
+    padding:
+      15px
+      max(20px, calc((100% - var(--container)) / 2));
+
+    background: var(--green-dark);
+
+    border-top:
+      1px solid rgba(255, 255, 255, 0.1);
+
+    box-shadow:
+      0 15px 25px rgba(0, 0, 0, 0.15);
+  }
+
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+
+  .nav-menu > a {
+    width: 100%;
+
+    padding: 15px 10px;
+  }
+
+
+  .nav-menu > a:not(.nav-cta)::after {
+    display: none;
+  }
+
+
+  .nav-menu .nav-cta {
+    margin-top: 8px;
+
+    text-align: center;
+  }
+
+
+  /* hamburger verandert in X */
+
+  .menu-toggle.active span:nth-child(1) {
+    transform:
+      translateY(8px)
+      rotate(45deg);
+  }
+
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+
+  .menu-toggle.active span:nth-child(3) {
+    transform:
+      translateY(-8px)
+      rotate(-45deg);
+  }
+}
+
+
+/* ---------- KLEINE TELEFOONS ---------- */
+
+@media (max-width: 480px) {
+
+  .logo {
+    font-size: 1.15rem;
+  }
+
+
+  .navbar {
+    min-height: 68px;
+  }
+
+
+  .nav-menu {
+    top: 68px;
+  }
+}
