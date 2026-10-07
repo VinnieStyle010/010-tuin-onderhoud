@@ -1,108 +1,90 @@
-/* =========================================================
+/* =========================================
    010 TUIN & ONDERHOUD
-   Contactformulier
-   ========================================================= */
+   CONTACT.JS
+   Demo contactformulier
+========================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
   const contactForm =
-    document.querySelector("#contact-form");
+    document.getElementById("contactForm");
 
   if (!contactForm) {
     return;
   }
 
 
-  contactForm.addEventListener("submit", (event) => {
+  /* =========================================
+     FORMULIER VERSTUREN
+  ========================================= */
 
-    event.preventDefault();
+  contactForm.addEventListener(
+    "submit",
+    (event) => {
 
-    const name =
-      contactForm.querySelector('[name="name"]');
+      /* Demo-site:
+         formulier wordt nog niet echt verstuurd
+      */
 
-    const email =
-      contactForm.querySelector('[name="email"]');
-
-    const message =
-      contactForm.querySelector('[name="message"]');
+      event.preventDefault();
 
 
-    /* ---------- CONTROLE ---------- */
+      /* =========================================
+         OUDE MELDING VERWIJDEREN
+      ========================================= */
 
-    if (
-      !name?.value.trim() ||
-      !email?.value.trim() ||
-      !message?.value.trim()
-    ) {
+      const oldMessage =
+        document.getElementById("formMessage");
 
-      showFormMessage(
-        "Vul uw naam, e-mailadres en bericht in.",
-        "error"
+      if (oldMessage) {
+        oldMessage.remove();
+      }
+
+
+      /* =========================================
+         SUCCESMELDING MAKEN
+      ========================================= */
+
+      const message =
+        document.createElement("div");
+
+      message.id = "formMessage";
+
+      message.setAttribute(
+        "role",
+        "status"
       );
 
-      return;
-    }
+      message.style.marginTop = "16px";
+      message.style.padding = "14px 16px";
+      message.style.borderRadius = "8px";
+
+      message.style.background =
+        "var(--green-soft)";
+
+      message.style.color =
+        "var(--green-dark)";
+
+      message.style.fontWeight = "700";
+
+      message.textContent =
+        "Bedankt! Dit is een demoformulier. Op een echte klantwebsite wordt de aanvraag hier doorgestuurd naar het bedrijf.";
 
 
-    if (!isValidEmail(email.value)) {
+      /* =========================================
+         MELDING ONDER FORMULIER
+      ========================================= */
 
-      showFormMessage(
-        "Vul een geldig e-mailadres in.",
-        "error"
-      );
-
-      return;
-    }
+      contactForm.appendChild(message);
 
 
-    /*
-      Dit is voorlopig een demoformulier.
+      /* =========================================
+         FORMULIER LEEGMAKEN
+      ========================================= */
 
-      Later koppelen we dit aan een echte
-      formulierenservice of backend zodat
-      aanvragen daadwerkelijk verstuurd worden.
-    */
-
-    showFormMessage(
-      "Bedankt! Dit demoformulier werkt. Voor een echte website koppelen we hier de verzending aan.",
-      "success"
-    );
-
-  });
-
-
-  /* ---------- E-MAIL CONTROLEREN ---------- */
-
-  function isValidEmail(email) {
-
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
-  }
-
-
-  /* ---------- MELDING TONEN ---------- */
-
-  function showFormMessage(message, type) {
-
-    let status =
-      document.querySelector("#form-status");
-
-    if (!status) {
-
-      status = document.createElement("div");
-
-      status.id = "form-status";
-
-      contactForm.appendChild(status);
+      contactForm.reset();
 
     }
-
-
-    status.textContent = message;
-
-    status.className =
-      `form-status ${type}`;
-
-  }
+  );
 
 });
