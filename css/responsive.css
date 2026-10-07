@@ -1,87 +1,89 @@
-/* =========================================================
+/* =========================================
    010 TUIN & ONDERHOUD
-   Responsive styling
-   ========================================================= */
+   RESPONSIVE.CSS
+   Tablet + mobiel
+========================================= */
 
 
-/* =========================================================
-   TABLET
-   ========================================================= */
+/* =========================================
+   TABLET / KLEINERE LAPTOP
+========================================= */
 
 @media (max-width: 1000px) {
 
-  .section {
-    padding: 80px 0;
+  .section,
+  .services,
+  .about,
+  .projects,
+  .reviews,
+  .contact {
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 
+  /* USP */
 
-  /* HERO */
-
-  .hero {
-    min-height: 600px;
+  .usp-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-
-  .hero-content {
-    max-width: 650px;
+  .usp-item {
+    border-bottom: 1px solid var(--border);
   }
 
 
   /* DIENSTEN */
 
   .services-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
-  }
-
-
-  .service-card:last-child {
-    grid-column: 1 / -1;
+    grid-template-columns: repeat(2, 1fr);
   }
 
 
   /* OVER ONS */
 
   .about-grid {
-    gap: 45px;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
   }
 
-
-  .about-image {
-    min-height: 470px;
+  .about-image img {
+    height: 480px;
   }
 
 
   /* PROJECTEN */
 
   .projects-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
-
-  .project-one {
+  .project-card:first-child {
     grid-column: 1 / -1;
   }
 
 
-  .project-card {
-    min-height: 360px;
+  /* REVIEWS */
+
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .review-card:last-child {
+    grid-column: 1 / -1;
   }
 
 
   /* CONTACT */
 
   .contact-grid {
-    gap: 45px;
+    gap: 40px;
   }
-
 }
 
 
-/* =========================================================
-   KLEINE TABLET / GROTE TELEFOON
-   ========================================================= */
+/* =========================================
+   TABLET / MOBIEL
+========================================= */
 
 @media (max-width: 800px) {
 
@@ -96,55 +98,24 @@
   /* HERO */
 
   .hero {
-    min-height: 570px;
+    min-height: 610px;
 
-    background-position: 62% center;
+    background-position: center;
+  }
+
+  .hero-content {
+    padding: 75px 0;
+  }
+
+  .hero p {
+    font-size: 1rem;
   }
 
 
-  .hero h1 {
-    font-size: clamp(
-      3rem,
-      11vw,
-      5rem
-    );
-  }
+  /* DIENSTEN */
 
-
-  .hero-text {
-    font-size: 1.05rem;
-  }
-
-
-  /* VOORDELEN */
-
-  .benefits-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
-
-    padding: 15px 0;
-  }
-
-
-  .benefits article {
-    padding: 18px 10px;
-  }
-
-
-  .benefits article + article {
-    border-left: 0;
-  }
-
-
-  .benefits article:nth-child(even) {
-    border-left:
-      1px solid var(--border);
-  }
-
-
-  .benefits article:nth-child(n + 3) {
-    border-top:
-      1px solid var(--border);
+  .services-grid {
+    grid-template-columns: 1fr;
   }
 
 
@@ -154,19 +125,42 @@
     grid-template-columns: 1fr;
   }
 
-
   .about-image {
-    min-height: 420px;
+    order: 2;
+  }
 
-    box-shadow:
-      12px 12px 0 #cadfc4;
+  .about-content {
+    order: 1;
+  }
+
+  .about-image img {
+    height: 430px;
   }
 
 
-  /* VERTROUWEN */
+  /* PROJECTEN */
 
-  .trust-cards {
+  .projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  .project-card:first-child {
+    grid-column: auto;
+  }
+
+  .project-card {
+    min-height: 360px;
+  }
+
+
+  /* REVIEWS */
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .review-card:last-child {
+    grid-column: auto;
   }
 
 
@@ -177,42 +171,40 @@
   }
 
 
-  .contact-intro {
-    max-width: 650px;
-  }
-
-
   /* FOOTER */
 
   .footer-grid {
     flex-direction: column;
-
     align-items: flex-start;
   }
-
 }
 
 
-/* =========================================================
+/* =========================================
    TELEFOON
-   ========================================================= */
+========================================= */
 
 @media (max-width: 600px) {
 
-  .section {
-    padding: 65px 0;
+  .container {
+    width: calc(100% - 28px);
   }
 
+
+  /* ALGEMEEN */
+
+  .section,
+  .services,
+  .about,
+  .projects,
+  .reviews,
+  .contact {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
 
   .section-heading {
-    margin-bottom: 35px;
-  }
-
-
-  .section-heading h2,
-  .about-content h2,
-  .contact-intro h2 {
-    font-size: 2.2rem;
+    margin-bottom: 34px;
   }
 
 
@@ -228,148 +220,154 @@
   /* HERO */
 
   .hero {
-    min-height: 540px;
+    min-height: 560px;
 
     background:
       linear-gradient(
-        rgba(5, 30, 18, 0.78),
-        rgba(5, 30, 18, 0.78)
+        rgba(5, 45, 27, 0.82),
+        rgba(5, 45, 27, 0.82)
       ),
-      url("https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1200&q=80");
-
-    background-size: cover;
-    background-position: center;
+      url("https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1200&q=80")
+      center / cover no-repeat;
   }
-
 
   .hero-content {
-    padding-top: 55px;
-    padding-bottom: 55px;
+    padding: 60px 0;
   }
 
+  .hero-badge {
+    margin-bottom: 20px;
 
-  .hero-label {
     font-size: 0.78rem;
   }
 
-
   .hero h1 {
     margin-bottom: 20px;
-
-    font-size: 3.4rem;
   }
 
-
-  .hero-text {
-    margin-bottom: 27px;
-
-    font-size: 1rem;
+  .hero p {
+    margin-bottom: 26px;
   }
 
-
-  .hero-buttons {
+  .hero-actions {
     flex-direction: column;
   }
 
-
-  .hero-buttons .button {
+  .hero-actions .btn {
     width: 100%;
+  }
+
+
+  /* USP */
+
+  .usp-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .usp-item {
+    padding: 20px 10px;
+  }
+
+  .usp-item strong {
+    font-size: 0.9rem;
+  }
+
+  .usp-item span {
+    font-size: 0.75rem;
   }
 
 
   /* DIENSTEN */
 
-  .services-grid {
-    grid-template-columns: 1fr;
+  .service-card img {
+    height: 210px;
   }
 
-
-  .service-card:last-child {
-    grid-column: auto;
-  }
-
-
-  .service-image {
-    height: 220px;
+  .service-content {
+    padding: 23px;
   }
 
 
   /* OVER ONS */
 
-  .about-image {
-    min-height: 350px;
+  .about-grid {
+    gap: 45px;
+  }
+
+  .about-image img {
+    height: 360px;
+
+    box-shadow:
+      10px 10px 0 rgba(115, 196, 88, 0.20);
   }
 
 
   /* PROJECTEN */
 
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-
-  .project-one {
-    grid-column: auto;
-  }
-
-
   .project-card {
-    min-height: 340px;
+    min-height: 320px;
+  }
+
+  .project-info {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+  }
+
+
+  /* REVIEWS */
+
+  .review-card {
+    padding: 26px;
+  }
+
+
+  /* CTA */
+
+  .cta-section {
+    padding: 65px 0;
+  }
+
+  .cta-box {
+    padding: 60px 22px;
   }
 
 
   /* CONTACT */
 
   .contact-form {
-    padding: 24px 20px;
+    padding: 22px;
   }
 
 
-  /* KNOPPEN */
+  /* FOOTER */
 
-  .button {
-    min-height: 52px;
-
-    padding: 0 20px;
+  .site-footer {
+    padding: 38px 0;
   }
-
 }
 
 
-/* =========================================================
-   ZEER KLEINE TELEFOONS
-   ========================================================= */
+/* =========================================
+   ZEER KLEINE TELEFOON
+========================================= */
 
-@media (max-width: 390px) {
+@media (max-width: 400px) {
 
-  .container {
-    width: calc(100% - 24px);
-  }
-
-
-  .hero h1 {
-    font-size: 2.9rem;
-  }
-
-
-  .benefits-grid {
+  .usp-grid {
     grid-template-columns: 1fr;
   }
 
-
-  .benefits article:nth-child(even) {
-    border-left: 0;
+  .hero {
+    min-height: 520px;
   }
 
-
-  .benefits article:nth-child(n + 2) {
-    border-top:
-      1px solid var(--border);
+  .about-image img {
+    height: 310px;
   }
 
-
-  .contact-form {
-    padding: 20px 16px;
+  .project-card {
+    min-height: 290px;
   }
 
 }
