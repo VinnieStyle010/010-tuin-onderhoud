@@ -1,46 +1,69 @@
-/* =========================================================
+/* =========================================
    010 TUIN & ONDERHOUD
-   Algemene JavaScript
-   ========================================================= */
+   MAIN.JS
+   Algemene functies
+========================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ---------- MOBIEL MENU ---------- */
+  /* =========================================
+     MOBIEL MENU
+  ========================================= */
 
-  const menuButton = document.querySelector(".menu-button");
-  const mobileNav = document.querySelector(".mobile-nav");
+  const menuButton =
+    document.getElementById("menuButton");
+
+  const mobileNav =
+    document.getElementById("mobileNav");
+
 
   if (menuButton && mobileNav) {
 
     menuButton.addEventListener("click", () => {
 
-      menuButton.classList.toggle("active");
-      mobileNav.classList.toggle("active");
+      const isOpen =
+        mobileNav.classList.toggle("active");
 
-      const isOpen = mobileNav.classList.contains("active");
+      menuButton.classList.toggle(
+        "active",
+        isOpen
+      );
 
       menuButton.setAttribute(
         "aria-expanded",
-        isOpen ? "true" : "false"
+        isOpen
+      );
+
+      menuButton.setAttribute(
+        "aria-label",
+        isOpen
+          ? "Menu sluiten"
+          : "Menu openen"
       );
 
     });
 
 
-    /* Menu sluiten na klikken op een link */
+    /* Menu sluiten als bezoeker op een link klikt */
 
-    const mobileLinks = mobileNav.querySelectorAll("a");
+    const mobileLinks =
+      mobileNav.querySelectorAll("a");
 
     mobileLinks.forEach((link) => {
 
       link.addEventListener("click", () => {
 
-        menuButton.classList.remove("active");
         mobileNav.classList.remove("active");
+        menuButton.classList.remove("active");
 
         menuButton.setAttribute(
           "aria-expanded",
           "false"
+        );
+
+        menuButton.setAttribute(
+          "aria-label",
+          "Menu openen"
         );
 
       });
@@ -50,49 +73,46 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* ---------- SMOOTH SCROLL ---------- */
+  /* =========================================
+     ESCAPE = MOBIEL MENU SLUITEN
+  ========================================= */
 
-  const internalLinks =
-    document.querySelectorAll('a[href^="#"]');
+  document.addEventListener(
+    "keydown",
+    (event) => {
 
-  internalLinks.forEach((link) => {
+      if (
+        event.key === "Escape" &&
+        mobileNav &&
+        menuButton
+      ) {
 
-    link.addEventListener("click", (event) => {
+        mobileNav.classList.remove("active");
+        menuButton.classList.remove("active");
 
-      const targetId =
-        link.getAttribute("href");
+        menuButton.setAttribute(
+          "aria-expanded",
+          "false"
+        );
 
-      if (!targetId || targetId === "#") {
-        return;
       }
 
-      const target =
-        document.querySelector(targetId);
-
-      if (!target) {
-        return;
-      }
-
-      event.preventDefault();
-
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-
-    });
-
-  });
+    }
+  );
 
 
-  /* ---------- JAARTAL FOOTER ---------- */
+  /* =========================================
+     JAARTAL
+     Werkt automatisch als we later
+     #currentYear in de footer gebruiken.
+  ========================================= */
 
-  const yearElement =
-    document.querySelector("#current-year");
+  const currentYear =
+    document.getElementById("currentYear");
 
-  if (yearElement) {
+  if (currentYear) {
 
-    yearElement.textContent =
+    currentYear.textContent =
       new Date().getFullYear();
 
   }
