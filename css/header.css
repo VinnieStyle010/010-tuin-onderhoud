@@ -267,3 +267,49 @@
   }
 
 }
+/* MOBIEL MENU */
+
+.mobile-nav {
+  display: none;
+}
+
+@media (max-width: 800px) {
+
+  .mobile-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 999;
+
+    padding: 20px;
+
+    background: var(--green-dark);
+
+    flex-direction: column;
+    gap: 18px;
+
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.18);
+  }
+
+  .mobile-nav.active {
+    display: flex;
+  }
+
+  .mobile-nav a {
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .mobile-nav a:last-child {
+    padding: 13px 16px;
+
+    border-radius: 8px;
+
+    background: var(--green-light);
+    color: var(--green-dark);
+
+    text-align: center;
+  }
+}
