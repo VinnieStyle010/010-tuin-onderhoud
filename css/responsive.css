@@ -4,12 +4,17 @@
 
 @media (max-width: 800px) {
 
-  .hero-content {
-    width: calc(100% - 32px);
-    max-width: 760px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 75px 0;
+.hero-content {
+  flex: 0 1 auto;
+  width: calc(100% - 28px);
+  max-width: 760px;
+  min-width: 0;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: 60px 0;
+}
   }
 
   .hero-label {
