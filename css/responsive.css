@@ -91,3 +91,106 @@
   }
 
 }
+/* =========================================
+   010 TUIN & ONDERHOUD
+   DEFINITIEVE MOBIELE LAYOUT
+========================================= */
+
+@media (max-width: 800px) {
+
+  /* DIENSTEN */
+
+  .services-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .service-card {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .service-content {
+    overflow-wrap: break-word;
+  }
+
+  /* OVER ONS */
+
+  .about-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  .about-image {
+    min-height: 350px;
+  }
+
+  .about-content {
+    min-width: 0;
+  }
+
+  /* PROJECTEN */
+
+  .projects-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .project-card {
+    min-height: 350px;
+    min-width: 0;
+  }
+
+  .project-card:first-child {
+    grid-column: auto;
+  }
+
+  /* VERTROUWEN */
+
+  .trust-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* CONTACT */
+
+  .contact-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 35px;
+  }
+
+  .contact-form {
+    min-width: 0;
+  }
+
+  /* FOOTER */
+
+  .footer-grid {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .about-image {
+    min-height: 300px;
+  }
+
+  .project-card {
+    min-height: 320px;
+  }
+
+  .service-image {
+    height: 220px;
+  }
+
+  .service-content {
+    padding: 24px;
+  }
+
+  .trust-cards article {
+    padding: 26px;
+  }
+
+  .contact-form {
+    padding: 22px;
+  }
+}
