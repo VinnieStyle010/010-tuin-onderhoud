@@ -371,3 +371,55 @@
   }
 
 }
+/* =========================================
+   MOBIELE BREEDTE CORRECTIE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .usp-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .usp-item {
+    min-width: 0;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .usp-item strong,
+  .usp-item span {
+    overflow-wrap: anywhere;
+  }
+
+  .hero-content {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .hero-badge {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .hero-actions {
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+}
+
+@media (max-width: 400px) {
+
+  .usp-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
