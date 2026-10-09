@@ -1,332 +1,87 @@
+/* 010 Tuin & Onderhoud — responsive layout
+   Vervangt het volledige bestaande css/responsive.css bestand.
+   Desktop blijft ongewijzigd; achtergrondafbeelding blijft in home.css.
+*/
 
-/* =========================================
-   010 TUIN & ONDERHOUD
-   RESPONSIVE.CSS - NIEUWE VERSIE
-========================================= */
-
-/* TABLET */
 @media (max-width: 1000px) {
-
-  .services-grid,
-  .projects-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .project-card:first-child {
-    grid-column: auto;
-  }
-
-  .about-grid {
-    gap: 35px;
-  }
-
-  .trust-cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .contact-grid {
-    gap: 35px;
-  }
+  .benefits-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .trust-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .about-grid, .contact-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; }
 }
 
-/* MOBIEL EN KLEINE TABLET */
 @media (max-width: 800px) {
+  html { scroll-padding-top: 90px; }
+  body { overflow-x: hidden; }
+  .container { width: calc(100% - 32px); max-width: 100%; }
 
-  html,
-  body {
-    max-width: 100%;
-    overflow-x: clip;
+  /* Menu: behoud bestaande uitklapfunctionaliteit in header.css */
+  .site-header, .nav-container { min-height: 70px; }
+  .nav-container { gap: 12px; }
+  .desktop-nav { display: none; }
+  .menu-button { display: inline-flex; }
+  .mobile-nav { width: 100%; }
+  .mobile-nav.active { display: flex; }
+
+  /* Hero: wijzig alleen maatvoering, niet de foto */
+  .hero { min-height: 0; background-size: cover; background-position: center; }
+  .hero-content { width: 100%; max-width: 100%; padding: 72px 0 64px; }
+  .hero-label { max-width: 100%; white-space: normal; font-size: .82rem; line-height: 1.5; }
+  .hero h1 { font-size: clamp(2.4rem, 9vw, 4rem); line-height: 1.12; overflow-wrap: break-word; }
+  .hero p { font-size: 1rem; line-height: 1.7; }
+  .hero-buttons { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+  .hero-buttons .button, .hero-buttons .btn, .hero-buttons a {
+    width: 100%; max-width: 100%; justify-content: center; text-align: center;
   }
 
-  .container {
-    width: calc(100% - 32px);
-    max-width: 1200px;
-    margin-inline: auto;
+  /* Secties */
+  .section { padding: 64px 0; }
+  .section-heading { max-width: 100%; margin-bottom: 30px; }
+  .section-heading h2 { font-size: clamp(1.9rem, 7vw, 2.7rem); line-height: 1.18; }
+
+  /* Voordelen: twee kolommen */
+  .benefits-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 10px; }
+  .benefits-grid > * { min-width: 0; }
+
+  /* Diensten: één kaart per rij */
+  .services-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .service-card { width: 100%; min-width: 0; overflow: hidden; }
+  .service-image { width: 100%; min-height: 0; height: 220px; background-position: center; background-size: cover; }
+  .service-content { padding: 24px; }
+
+  /* Over ons */
+  .about-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .about-image { width: 100%; min-height: 300px; box-shadow: 10px 10px 0 rgba(113, 190, 83, .18); }
+  .about-content { min-width: 0; }
+
+  /* Projecten */
+  .projects-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .project-card { width: 100%; min-width: 0; min-height: 290px; background-position: center; background-size: cover; }
+  .project-info { max-width: 100%; }
+
+  /* Vertrouwen */
+  .trust-cards { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .trust-cards > * { min-width: 0; }
+
+  /* Contact */
+  .contact-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .contact-form { width: 100%; min-width: 0; }
+  .contact-form input, .contact-form select, .contact-form textarea {
+    width: 100%; max-width: 100%; box-sizing: border-box;
   }
 
-  .section {
-    padding: 65px 0;
-  }
-
-  .section-heading {
-    margin-bottom: 32px;
-  }
-
-  h1 {
-    font-size: clamp(2.7rem, 10vw, 4rem);
-  }
-
-  h2 {
-    font-size: clamp(2rem, 7vw, 3rem);
-  }
-
-  /* HEADER */
-
-  .nav-container {
-    min-height: 70px;
-  }
-
-  .logo {
-    font-size: clamp(0.95rem, 4vw, 1.2rem);
-  }
-
-  .desktop-nav {
-    display: none;
-  }
-
-  .menu-button {
-    display: inline-flex;
-    flex-shrink: 0;
-  }
-
-  /* HERO */
-
-  .hero {
-    min-height: 570px;
-    background-position: center;
-  }
-
-  .hero-content {
-    width: calc(100% - 32px);
-    max-width: 760px;
-    padding: 65px 0;
-  }
-
-  .hero-label {
-    max-width: 100%;
-    white-space: normal;
-  }
-
-  .hero-text {
-    font-size: 1rem;
-  }
-
-  .hero-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-  }
-
-  .hero-buttons .button {
-    width: 100%;
-    text-align: center;
-  }
-
-  /* VOORDELEN */
-
-  .benefits-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .benefits article {
-    min-width: 0;
-    padding: 22px 10px;
-  }
-
-  /* DIENSTEN */
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
-  }
-
-  .service-card {
-    width: 100%;
-    min-width: 0;
-  }
-
-  .service-image {
-    height: 240px;
-  }
-
-  .service-content {
-    padding: 24px;
-    overflow-wrap: break-word;
-  }
-
-  /* OVER ONS */
-
-  .about-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 40px;
-  }
-
-  .about-image {
-    width: 100%;
-    min-height: 350px;
-    box-shadow: 10px 10px 0 rgba(115,196,88,.2);
-  }
-
-  .about-content {
-    min-width: 0;
-  }
-
-  /* PROJECTEN */
-
-  .projects-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 22px;
-  }
-
-  .project-card,
-  .project-card:first-child {
-    grid-column: auto;
-    width: 100%;
-    min-width: 0;
-    min-height: 350px;
-  }
-
-  .project-info {
-    left: 22px;
-    right: 22px;
-    bottom: 22px;
-    overflow-wrap: break-word;
-  }
-
-  /* VERTROUWEN */
-
-  .trust-cards {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 20px;
-  }
-
-  .trust-cards article {
-    min-width: 0;
-    padding: 26px;
-  }
-
-  /* CONTACT */
-
-  .contact-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 35px;
-  }
-
-  .contact-form {
-    min-width: 0;
-    padding: 24px;
-  }
-
-  /* FOOTER */
-
-  .footer-grid {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-  }
+  /* Footer */
+  .footer-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; }
 }
 
-/* KLEINE TELEFOONS */
-@media (max-width: 400px) {
-
-  .container,
-  .hero-content {
-    width: calc(100% - 28px);
-  }
-
-  .demo-bar {
-    padding: 8px 12px;
-    font-size: 0.7rem;
-  }
-
-  .hero {
-    min-height: 520px;
-  }
-
-  .benefits-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-image {
-    min-height: 280px;
-  }
-
-  .project-card {
-    min-height: 300px;
-  }
-}
-
-/* =========================================
-   DEFINITIEVE MOBIELE INDELING
-   010 TUIN & ONDERHOUD
-========================================= */
-
-@media screen and (max-width: 800px) {
-
-  /* Diensten netjes onder elkaar */
-  .services-grid {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-    gap: 24px !important;
-    width: 100% !important;
-  }
-
-  .service-card {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-  }
-
-  .service-image {
-    height: 230px;
-  }
-
-  .service-content {
-    padding: 24px;
-  }
-
-  /* Over ons onder elkaar */
-  .about-grid {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-    gap: 35px !important;
-  }
-
-  .about-image {
-    min-height: 320px;
-  }
-
-  /* Projecten onder elkaar */
-  .projects-grid {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-    gap: 22px !important;
-  }
-
-  .project-card,
-  .project-card:first-child {
-    grid-column: auto !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    min-height: 320px;
-  }
-
-  /* Vertrouwen onder elkaar */
-  .trust-cards {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-    gap: 20px !important;
-  }
-
-  /* Contact onder elkaar */
-  .contact-grid {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-    gap: 35px !important;
-  }
-
-  /* Tekst blijft binnen kaarten */
-  .service-content h3,
-  .service-content p,
-  .about-content,
-  .project-info {
-    overflow-wrap: break-word;
-    min-width: 0;
-  }
+@media (max-width: 480px) {
+  .container { width: calc(100% - 28px); }
+  .hero-content { padding: 60px 0 56px; }
+  .hero h1 { font-size: clamp(2.1rem, 9vw, 2.8rem); }
+  .section { padding: 54px 0; }
+  .service-image { height: 195px; }
+  .service-content { padding: 20px; }
+  .about-image { min-height: 250px; }
+  .project-card { min-height: 260px; }
 }
