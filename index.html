@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="nl">
 
@@ -5,11 +6,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>010 Tuin & Onderhoud | Hovenier Rotterdam</title>
+  <title>010 Tuin & Onderhoud | Rotterdams tuinwerk</title>
 
   <meta
     name="description"
-    content="Demo-website voor een professioneel hoveniers- en tuinonderhoudsbedrijf in Rotterdam."
+    content="Demo-website voor 010 Tuin & Onderhoud. Rotterdamse uitstraling, duidelijk tuinonderhoud, tuinaanleg en snoeiwerk."
   >
 
   <!-- CSS -->
@@ -19,14 +20,12 @@
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 
-
 <body>
 
   <!-- DEMO MELDING -->
   <div class="demo-bar">
     DEMO-WEBSITE • Voorbeeldontwerp voor hoveniersbedrijven
   </div>
-
 
   <!-- HEADER -->
   <header class="site-header">
@@ -37,11 +36,10 @@
         010 <span>Tuin & Onderhoud</span>
       </a>
 
-      <nav class="desktop-nav">
+      <nav class="desktop-nav" aria-label="Hoofdnavigatie">
         <a href="#diensten">Diensten</a>
         <a href="#over-ons">Over ons</a>
         <a href="#projecten">Projecten</a>
-
         <a href="#contact" class="nav-cta">
           Offerte aanvragen
         </a>
@@ -50,7 +48,9 @@
       <button
         class="menu-button"
         id="menuButton"
+        type="button"
         aria-label="Menu openen"
+        aria-controls="mobileNav"
         aria-expanded="false"
       >
         ☰
@@ -58,19 +58,19 @@
 
     </div>
 
-
     <!-- MOBIEL MENU -->
-    <nav class="mobile-nav" id="mobileNav">
-
+    <nav
+      class="mobile-nav"
+      id="mobileNav"
+      aria-label="Mobiele navigatie"
+    >
       <a href="#diensten">Diensten</a>
       <a href="#over-ons">Over ons</a>
       <a href="#projecten">Projecten</a>
       <a href="#contact">Offerte aanvragen</a>
-
     </nav>
 
   </header>
-
 
   <main>
 
@@ -80,17 +80,19 @@
       <div class="container hero-content">
 
         <p class="hero-label">
-          Hovenier in Rotterdam & omgeving
+          Recht uit Rotterdam • Voor Rotterdam & omgeving
         </p>
 
         <h1>
-          Uw tuin.<br>
-          <span>Onze zorg.</span>
+          Geen woorden.<br>
+          <span>Groene daden.</span>
         </h1>
 
         <p class="hero-text">
-          Van tuinonderhoud tot complete tuinaanleg.
-          Een verzorgde buitenruimte begint met goed vakwerk.
+          Een tuin die er netjes bij ligt? Daar steken we
+          graag de handen voor uit de mouwen.
+          Van een kleine opknapbeurt tot een complete
+          tuinaanleg. Gewoon goed tuinwerk, zonder poespas.
         </p>
 
         <div class="hero-buttons">
@@ -100,7 +102,7 @@
           </a>
 
           <a href="#projecten" class="button button-secondary">
-            Bekijk projecten
+            Bekijk onze projecten
           </a>
 
         </div>
@@ -109,36 +111,34 @@
 
     </section>
 
-
     <!-- VOORDELEN -->
     <section class="benefits">
 
       <div class="container benefits-grid">
 
         <article>
-          <strong>Rotterdam</strong>
-          <span>& omgeving</span>
+          <strong>010 Mentaliteit</strong>
+          <span>Handen uit de mouwen</span>
         </article>
 
         <article>
           <strong>Vrijblijvend</strong>
-          <span>offerte aanvragen</span>
+          <span>Een duidelijke offerte</span>
         </article>
 
         <article>
           <strong>Persoonlijk</strong>
-          <span>contact & advies</span>
+          <span>Gewoon goed contact</span>
         </article>
 
         <article>
-          <strong>Vakkundig</strong>
-          <span>tuinwerk uitgevoerd</span>
+          <strong>Vakwerk</strong>
+          <span>Netjes en zorgvuldig</span>
         </article>
 
       </div>
 
     </section>
-
 
     <!-- DIENSTEN -->
     <section class="section" id="diensten">
@@ -152,65 +152,82 @@
           </p>
 
           <h2>
-            Alles voor een tuin die er goed bij ligt
+            Mouwen opstropen, tuin aanpakken.
           </h2>
 
           <p>
-            Van regelmatig onderhoud tot een compleet nieuwe tuin.
+            Of het groen nu uit de kluiten groeit of
+            de hele tuin op de schop mag: voor iedere
+            klus zoeken we een passende aanpak.
           </p>
 
         </div>
-
 
         <div class="services-grid">
 
           <article class="service-card">
 
-            <div class="service-image service-maintenance"></div>
+            <div
+              class="service-image service-maintenance"
+              role="img"
+              aria-label="Tuinonderhoud"
+            ></div>
 
             <div class="service-content">
 
               <h3>Tuinonderhoud</h3>
 
               <p>
-                Periodiek of eenmalig onderhoud zodat uw tuin
-                netjes en verzorgd blijft.
+                Een tuin hoort een fijne plek te zijn,
+                geen tweede baan. Van regelmatig onderhoud
+                tot een eenmalige opknapbeurt: we zorgen
+                dat het groen er weer verzorgd bij ligt.
               </p>
 
             </div>
 
           </article>
 
-
           <article class="service-card">
 
-            <div class="service-image service-construction"></div>
+            <div
+              class="service-image service-construction"
+              role="img"
+              aria-label="Tuinaanleg"
+            ></div>
 
             <div class="service-content">
 
               <h3>Tuinaanleg</h3>
 
               <p>
-                Van het eerste ontwerp tot bestrating,
-                beplanting en complete inrichting.
+                Een frisse start voor uw tuin?
+                Van de eerste ideeën tot bestrating,
+                beplanting en inrichting.
+                Samen maken we er iets moois van.
               </p>
 
             </div>
 
           </article>
 
-
           <article class="service-card">
 
-            <div class="service-image service-pruning"></div>
+            <div
+              class="service-image service-pruning"
+              role="img"
+              aria-label="Snoeien en opruimen"
+            ></div>
 
             <div class="service-content">
 
               <h3>Snoeien & opruimen</h3>
 
               <p>
-                Hagen, struiken en ander groen weer netjes,
-                inclusief het opruimen van groenafval.
+                Een heg die alle kanten op groeit?
+                Struiken die wel een knipbeurt kunnen
+                gebruiken? We brengen het groen weer
+                in vorm en ruimen de boel netjes op.
               </p>
 
             </div>
@@ -223,34 +240,51 @@
 
     </section>
 
-
     <!-- OVER ONS -->
     <section class="section about-section" id="over-ons">
 
       <div class="container about-grid">
 
-        <div class="about-image"></div>
+        <div
+          class="about-image"
+          role="img"
+          aria-label="Hovenierswerk in de tuin"
+        ></div>
 
         <div class="about-content">
 
           <p class="section-label">
-            010 Tuin & Onderhoud
+            De Rotterdamse aanpak
           </p>
 
           <h2>
-            Goed werk begint met luisteren.
+            Niet lullen, maar aanpakken.
           </h2>
 
           <p>
-            Iedere tuin is anders. Daarom bespreken we eerst
-            uw wensen en kijken we naar een oplossing die bij
-            uw tuin en budget past.
+            In Rotterdam houden we van duidelijkheid.
+            Geen ingewikkelde verhalen, maar gewoon
+            goed luisteren naar wat er moet gebeuren.
+          </p>
+
+          <p>
+            Een tuin is persoonlijk. De één wil een
+            onderhoudsvriendelijke buitenruimte,
+            de ander droomt van een groene plek
+            om lekker te zitten.
+          </p>
+
+          <p>
+            Daarom beginnen we met uw wensen.
+            We denken mee over de mogelijkheden
+            en bespreken vooraf wat bij uw tuin
+            en budget past.
           </p>
 
           <ul class="check-list">
             <li>Duidelijke afspraken vooraf</li>
-            <li>Netjes en zorgvuldig werken</li>
-            <li>Persoonlijk contact</li>
+            <li>Persoonlijk en eerlijk contact</li>
+            <li>Zorgvuldig en netjes werken</li>
             <li>Rotterdam en omgeving</li>
           </ul>
 
@@ -264,7 +298,6 @@
 
     </section>
 
-
     <!-- PROJECTEN -->
     <section class="section" id="projecten">
 
@@ -277,37 +310,51 @@
           </p>
 
           <h2>
-            Zo kan uw werk worden gepresenteerd
+            Kijk, zo kan het ook!
           </h2>
 
           <p>
-            Deze projecten zijn demonstratie-inhoud voor deze voorbeeldwebsite.
+            Van een frisse tuinindeling tot een
+            verzorgde groene buitenruimte.
+            Hieronder ziet u voorbeelden van
+            verschillende soorten tuinwerk.
+          </p>
+
+          <p>
+            Dit zijn sfeerbeelden voor deze
+            demonstratiewebsite, geen daadwerkelijk
+            uitgevoerde projecten van het bedrijf.
           </p>
 
         </div>
 
-
         <div class="projects-grid">
 
           <article class="project-card project-one">
+
             <div class="project-info">
-              <h3>Tuinaanleg</h3>
-              <p>Voorbeeldproject</p>
+              <h3>Een frisse start</h3>
+              <p>Voorbeeld van tuinaanleg</p>
             </div>
+
           </article>
 
           <article class="project-card project-two">
+
             <div class="project-info">
-              <h3>Tuinonderhoud</h3>
-              <p>Voorbeeldproject</p>
+              <h3>Alles weer netjes</h3>
+              <p>Voorbeeld van tuinonderhoud</p>
             </div>
+
           </article>
 
           <article class="project-card project-three">
+
             <div class="project-info">
-              <h3>Beplanting</h3>
-              <p>Voorbeeldproject</p>
+              <h3>Groen om van te genieten</h3>
+              <p>Voorbeeld van beplanting</p>
             </div>
+
           </article>
 
         </div>
@@ -315,7 +362,6 @@
       </div>
 
     </section>
-
 
     <!-- VERTROUWEN -->
     <section class="section trust-section">
@@ -329,33 +375,53 @@
           </p>
 
           <h2>
-            Laat toekomstige klanten zien waarom ze voor u kiezen
+            Afspraak is afspraak. Zo doen we dat in 010.
           </h2>
 
-        </div>
+          <p>
+            Goed tuinwerk begint bij duidelijkheid.
+            Weten waar u aan toe bent, prettig contact
+            en aandacht voor het resultaat.
+          </p>
 
+        </div>
 
         <div class="trust-cards">
 
           <article>
-            <h3>★ Reviews</h3>
+
+            <h3>✓ Duidelijke afspraken</h3>
+
             <p>
-              Toon hier echte beoordelingen van tevreden klanten.
+              Vooraf bespreken wat er moet gebeuren,
+              welke mogelijkheden er zijn en wat
+              u kunt verwachten.
             </p>
+
           </article>
 
           <article>
-            <h3>↔ Voor & na</h3>
+
+            <h3>✓ Persoonlijk contact</h3>
+
             <p>
-              Laat met foto's duidelijk zien welk resultaat u levert.
+              Gewoon met elkaar in gesprek.
+              Uw wensen staan centraal,
+              zonder ingewikkeld gedoe.
             </p>
+
           </article>
 
           <article>
-            <h3>✓ Zekerheid</h3>
+
+            <h3>✓ Oog voor de tuin</h3>
+
             <p>
-              Benoem garanties, ervaring of andere sterke punten.
+              Een verzorgde tuin zit in de details.
+              Daarom verdient iedere klus
+              aandacht en een nette afwerking.
             </p>
+
           </article>
 
         </div>
@@ -363,7 +429,6 @@
       </div>
 
     </section>
-
 
     <!-- CONTACT -->
     <section class="section" id="contact">
@@ -377,25 +442,34 @@
           </p>
 
           <h2>
-            Vertel ons over uw tuin.
+            Vraag vrijblijvend een offerte aan.
           </h2>
 
           <p>
-            Dit gedeelte laat zien hoe een bezoeker eenvoudig
-            een offerte kan aanvragen.
+            Heeft u vragen over tuinonderhoud,
+            tuinaanleg of snoeiwerk?
+            Vul het formulier in en beschrijf
+            uw wensen zo duidelijk mogelijk.
+          </p>
+
+          <p>
+            Dit is een demonstratieformulier
+            voor een voorbeeldwebsite.
           </p>
 
           <div class="demo-contact">
+
             <strong>Voorbeeldgegevens</strong>
 
             <p>Rotterdam en omgeving</p>
             <p>010 - 123 45 67</p>
             <p>voorbeeld@bedrijf.nl</p>
+
           </div>
 
         </div>
 
-
+        <!-- DEMONSTRATIEFORMULIER -->
         <form
           class="contact-form"
           id="contactForm"
@@ -403,35 +477,41 @@
 
           <label>
             Naam
+
             <input
               type="text"
               name="name"
-              placeholder="Uw naam"
+              placeholder="Uw volledige naam"
+              autocomplete="name"
               required
             >
           </label>
 
           <label>
             E-mailadres
+
             <input
               type="email"
               name="email"
               placeholder="naam@voorbeeld.nl"
+              autocomplete="email"
               required
             >
           </label>
 
           <label>
             Telefoonnummer
+
             <input
               type="tel"
               name="phone"
-              placeholder="06..."
+              placeholder="Uw telefoonnummer"
+              autocomplete="tel"
             >
           </label>
 
           <label>
-            Dienst
+            Gewenste dienst
 
             <select name="service" required>
 
@@ -460,11 +540,11 @@
           </label>
 
           <label>
-            Uw bericht
+            Omschrijving van uw aanvraag
 
             <textarea
               name="message"
-              placeholder="Vertel kort wat u wilt laten doen..."
+              placeholder="Beschrijf de gewenste werkzaamheden..."
               required
             ></textarea>
 
@@ -478,7 +558,8 @@
           </button>
 
           <p class="form-note">
-            Demonstratieformulier — er worden geen gegevens verzonden.
+            Demonstratieformulier — er worden
+            geen gegevens verzonden.
           </p>
 
         </form>
@@ -489,7 +570,6 @@
 
   </main>
 
-
   <!-- FOOTER -->
   <footer class="site-footer">
 
@@ -497,17 +577,17 @@
 
       <div>
         <strong>010 Tuin & Onderhoud</strong>
-        <p>Demo-website</p>
+        <p>Rotterdam & omgeving</p>
       </div>
 
       <p>
-        Voorbeeldontwerp voor een hoveniersbedrijf
+        Geen woorden, maar groene daden.
+        Demonstratie-website.
       </p>
 
     </div>
 
   </footer>
-
 
   <!-- JAVASCRIPT -->
   <script src="js/main.js"></script>
