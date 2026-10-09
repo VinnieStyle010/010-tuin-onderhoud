@@ -1,9 +1,9 @@
+
 /* =========================================
    010 TUIN & ONDERHOUD
-   HOME.CSS
-   Exact afgestemd op index.html
+   HOME.CSS - COMPLETE VERSIE
+   Rotterdamse uitstraling
 ========================================= */
-
 
 /* =========================================
    ALGEMENE SECTIES
@@ -20,11 +20,9 @@
 
 .section-label {
   margin-bottom: 12px;
-
   color: var(--green);
   font-size: 0.82rem;
   font-weight: 800;
-
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -33,30 +31,31 @@
   margin-bottom: 18px;
 }
 
+.section-heading > p {
+  margin-bottom: 12px;
+}
+
 .section-heading > p:last-child {
+  margin-bottom: 0;
   font-size: 1.05rem;
 }
 
-
 /* =========================================
-   ALGEMENE KNOPPEN
+   KNOPPEN - PROFESSIONEEL
 ========================================= */
 
 .button {
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
-
   min-height: 52px;
-
   padding: 0 25px;
-
   border: 0;
   border-radius: 8px;
-
   font-weight: 800;
-
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
   transition:
     transform 0.2s ease,
     background 0.2s ease,
@@ -67,12 +66,15 @@
   transform: translateY(-2px);
 }
 
+.button:focus-visible {
+  outline: 3px solid var(--green-light);
+  outline-offset: 3px;
+}
+
 .button-primary {
   background: var(--green-light);
   color: var(--green-dark);
-
-  box-shadow:
-    0 8px 22px rgba(115, 196, 88, 0.20);
+  box-shadow: 0 8px 22px rgba(115, 196, 88, 0.20);
 }
 
 .button-primary:hover {
@@ -81,9 +83,7 @@
 
 .button-secondary {
   color: var(--white);
-
   border: 1px solid rgba(255, 255, 255, 0.55);
-
   background: rgba(255, 255, 255, 0.07);
 }
 
@@ -91,25 +91,22 @@
   background: rgba(255, 255, 255, 0.15);
 }
 
-
 /* =========================================
-   HERO
+   HERO - ROTTERDAMSE UITSTRALING
 ========================================= */
 
 .hero {
   position: relative;
-
   min-height: 680px;
-
   display: flex;
   align-items: center;
 
   background:
     linear-gradient(
       90deg,
-      rgba(5, 45, 27, 0.92) 0%,
-      rgba(5, 45, 27, 0.72) 45%,
-      rgba(5, 45, 27, 0.38) 100%
+      rgba(5, 45, 27, 0.94) 0%,
+      rgba(5, 45, 27, 0.76) 48%,
+      rgba(5, 45, 27, 0.30) 100%
     ),
     url("https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1800&q=85")
     center / cover no-repeat;
@@ -118,37 +115,28 @@
 .hero-content {
   position: relative;
   z-index: 2;
-
   max-width: 760px;
-
   padding: 90px 0;
 }
 
 .hero-label {
   display: inline-flex;
-
+  max-width: 100%;
   margin-bottom: 25px;
   padding: 8px 15px;
 
-  border:
-    1px solid rgba(115, 196, 88, 0.45);
-
+  border: 1px solid rgba(115, 196, 88, 0.45);
   border-radius: 999px;
-
-  background:
-    rgba(115, 196, 88, 0.10);
+  background: rgba(115, 196, 88, 0.10);
 
   color: rgba(255, 255, 255, 0.92);
-
   font-size: 0.9rem;
   font-weight: 700;
 }
 
 .hero h1 {
   margin-bottom: 26px;
-
   color: var(--white);
-
   letter-spacing: -0.04em;
 }
 
@@ -158,21 +146,16 @@
 
 .hero-text {
   max-width: 650px;
-
   margin-bottom: 34px;
-
-  color: rgba(255, 255, 255, 0.88);
-
+  color: rgba(255, 255, 255, 0.90);
   font-size: 1.1rem;
 }
 
 .hero-buttons {
   display: flex;
   flex-wrap: wrap;
-
   gap: 14px;
 }
-
 
 /* =========================================
    VOORDELEN
@@ -180,57 +163,43 @@
 
 .benefits {
   background: var(--white);
-
   border-bottom: 1px solid var(--border);
 }
 
 .benefits-grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .benefits article {
   position: relative;
-
+  min-width: 0;
   padding: 28px 20px;
-
   text-align: center;
 }
 
 .benefits article:not(:last-child)::after {
   content: "";
-
   position: absolute;
-
   top: 25%;
   right: 0;
-
   width: 1px;
   height: 50%;
-
   background: var(--border);
 }
 
 .benefits strong {
   display: block;
-
   color: var(--green-dark);
-
   font-size: 1rem;
 }
 
 .benefits span {
   display: block;
-
   margin-top: 3px;
-
   color: var(--text-light);
-
   font-size: 0.82rem;
 }
-
 
 /* =========================================
    DIENSTEN
@@ -242,20 +211,15 @@
 
 .services-grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
 
 .service-card {
+  min-width: 0;
   overflow: hidden;
-
   background: var(--white);
-
   border-radius: var(--radius);
-
   box-shadow: var(--shadow);
 
   transition:
@@ -265,38 +229,30 @@
 
 .service-card:hover {
   transform: translateY(-6px);
-
-  box-shadow:
-    0 18px 45px
-    rgba(13, 59, 38, 0.14);
+  box-shadow: 0 18px 45px rgba(13, 59, 38, 0.14);
 }
 
 .service-image {
   height: 245px;
-
+  background-color: var(--green-soft);
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
-
-/* Tuinonderhoud */
-
+/* Foto 1: tuinonderhoud */
 .service-maintenance {
   background-image:
     url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1000&q=85");
 }
 
-
-/* Tuinaanleg */
-
+/* Foto 2: tuinaanleg */
 .service-construction {
   background-image:
     url("https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1000&q=85");
 }
 
-
-/* Snoeien */
-
+/* Foto 3: snoeiwerk */
 .service-pruning {
   background-image:
     url("https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?auto=format&fit=crop&w=1000&q=85");
@@ -314,7 +270,6 @@
   font-size: 0.95rem;
 }
 
-
 /* =========================================
    OVER ONS
 ========================================= */
@@ -325,27 +280,27 @@
 
 .about-grid {
   display: grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: center;
-
   gap: 70px;
 }
 
 .about-image {
   min-height: 560px;
-
   border-radius: var(--radius);
 
-  background:
-    url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1200&q=85")
-    center / cover no-repeat;
+  background-color: var(--green-dark);
+  background-image:
+    url("https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=85");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
-  box-shadow:
-    20px 20px 0
-    rgba(115, 196, 88, 0.20);
+  box-shadow: 20px 20px 0 rgba(115, 196, 88, 0.20);
+}
+
+.about-content {
+  min-width: 0;
 }
 
 .about-content h2 {
@@ -354,42 +309,32 @@
 
 .about-content > p:not(.section-label) {
   margin-bottom: 22px;
-
   font-size: 1.02rem;
 }
 
 .check-list {
   display: grid;
-
   gap: 14px;
-
   margin: 28px 0 32px;
-
+  padding: 0;
   list-style: none;
 }
 
 .check-list li {
   position: relative;
-
   padding-left: 30px;
-
   color: var(--text);
-
   font-weight: 700;
 }
 
 .check-list li::before {
   content: "✓";
-
   position: absolute;
   left: 0;
-
   color: var(--green);
-
   font-size: 1.2rem;
   font-weight: 900;
 }
-
 
 /* =========================================
    PROJECTEN
@@ -401,27 +346,23 @@
 
 .projects-grid {
   display: grid;
-
-  grid-template-columns:
-    1.5fr 1fr 1fr;
-
+  grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(0, 1fr));
   gap: 18px;
 }
 
 .project-card {
   position: relative;
-
+  min-width: 0;
   min-height: 400px;
-
   overflow: hidden;
-
   border-radius: var(--radius);
 
+  background-color: var(--green-soft);
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
 
-  transition:
-    transform 0.25s ease;
+  transition: transform 0.25s ease;
 }
 
 .project-card:hover {
@@ -430,7 +371,6 @@
 
 .project-card::after {
   content: "";
-
   position: absolute;
   inset: 0;
 
@@ -442,42 +382,40 @@
     );
 }
 
+/* Project 1: tuinaanleg */
 .project-one {
   background-image:
     url("https://images.unsplash.com/photo-1558521558-037f1cb027c5?auto=format&fit=crop&w=1200&q=85");
 }
 
+/* Project 2: onderhoud */
 .project-two {
   background-image:
     url("https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=1000&q=85");
 }
 
+/* Project 3: inrichting en beplanting */
 .project-three {
   background-image:
-    url("https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1000&q=85");
+    url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=85");
 }
 
 .project-info {
   position: absolute;
-
   left: 26px;
   right: 26px;
   bottom: 24px;
-
   z-index: 2;
 }
 
 .project-info h3 {
   margin-bottom: 4px;
-
   color: var(--white);
 }
 
 .project-info p {
-  color:
-    rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 0.82);
 }
-
 
 /* =========================================
    VERTROUWEN
@@ -495,38 +433,33 @@
   color: var(--green-light);
 }
 
+.section-heading.light > p:not(.section-label) {
+  color: rgba(255, 255, 255, 0.82);
+}
+
 .trust-cards {
   display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
 
 .trust-cards article {
+  min-width: 0;
   padding: 32px;
 
-  border:
-    1px solid rgba(255, 255, 255, 0.08);
-
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius);
-
-  background:
-    rgba(255, 255, 255, 0.055);
+  background: rgba(255, 255, 255, 0.055);
 }
 
 .trust-cards h3 {
   margin-bottom: 14px;
-
   color: var(--white);
 }
 
 .trust-cards p {
-  color:
-    rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.76);
 }
-
 
 /* =========================================
    CONTACT
@@ -538,13 +471,13 @@
 
 .contact-grid {
   display: grid;
-
-  grid-template-columns:
-    0.8fr 1.2fr;
-
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
   gap: 70px;
-
   align-items: start;
+}
+
+.contact-intro {
+  min-width: 0;
 }
 
 .contact-intro h2 {
@@ -557,19 +490,14 @@
 
 .demo-contact {
   margin-top: 32px;
-
   padding: 24px;
-
   border-radius: 12px;
-
   background: var(--green-soft);
 }
 
 .demo-contact strong {
   display: block;
-
   margin-bottom: 12px;
-
   color: var(--green-dark);
 }
 
@@ -577,28 +505,22 @@
   margin: 4px 0;
 }
 
-
 /* =========================================
-   CONTACTFORMULIER
+   CONTACTFORMULIER - ZAKELIJK
 ========================================= */
 
 .contact-form {
+  min-width: 0;
   padding: 34px;
-
   background: var(--white);
-
   border-radius: var(--radius);
-
   box-shadow: var(--shadow);
 }
 
 .contact-form label {
   display: block;
-
   margin-bottom: 18px;
-
   color: var(--text);
-
   font-size: 0.9rem;
   font-weight: 700;
 }
@@ -607,33 +529,26 @@
 .contact-form select,
 .contact-form textarea {
   display: block;
-
   width: 100%;
-
+  max-width: 100%;
   margin-top: 7px;
 
-  border:
-    1px solid var(--border);
-
+  border: 1px solid var(--border);
   border-radius: 8px;
-
   background: var(--white);
-
   color: var(--text);
+  font: inherit;
 }
 
 .contact-form input,
 .contact-form select {
   min-height: 56px;
-
   padding: 0 15px;
 }
 
 .contact-form textarea {
   min-height: 150px;
-
   padding: 15px;
-
   resize: vertical;
 }
 
@@ -641,11 +556,7 @@
 .contact-form select:focus,
 .contact-form textarea:focus {
   border-color: var(--green-light);
-
-  box-shadow:
-    0 0 0 3px
-    rgba(115, 196, 88, 0.15);
-
+  box-shadow: 0 0 0 3px rgba(115, 196, 88, 0.15);
   outline: none;
 }
 
@@ -655,12 +566,9 @@
 
 .form-note {
   margin-top: 14px;
-
   text-align: center;
-
   font-size: 0.78rem;
 }
-
 
 /* =========================================
    FOOTER
@@ -668,30 +576,29 @@
 
 .site-footer {
   padding: 48px 0;
-
   background: #062b1a;
-
   color: var(--white);
 }
 
 .footer-grid {
   display: flex;
-
   align-items: center;
   justify-content: space-between;
-
   gap: 30px;
 }
 
 .site-footer strong {
   display: block;
-
   margin-bottom: 4px;
 }
 
 .site-footer p {
-  color:
-    rgba(255, 255, 255, 0.62);
-
+  color: rgba(255, 255, 255, 0.70);
   font-size: 0.88rem;
 }
+
+/* =========================================
+   EINDE HOME.CSS
+   Mobiele aanpassingen staan in
+   css/responsive.css
+========================================= */
