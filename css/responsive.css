@@ -1,455 +1,15 @@
 /* =========================================
-   010 TUIN & ONDERHOUD
-   RESPONSIVE.CSS
-   Tablet + mobiel
-========================================= */
-
-
-/* =========================================
-   TABLET / KLEINERE LAPTOP
-========================================= */
-
-@media (max-width: 1000px) {
-
-  .section,
-  .services,
-  .about,
-  .projects,
-  .reviews,
-  .contact {
-    padding-top: 80px;
-    padding-bottom: 80px;
-  }
-
-  /* USP */
-
-  .usp-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .usp-item {
-    border-bottom: 1px solid var(--border);
-  }
-
-
-  /* DIENSTEN */
-
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-
-  /* OVER ONS */
-
-  .about-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-  }
-
-  .about-image img {
-    height: 480px;
-  }
-
-
-  /* PROJECTEN */
-
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .project-card:first-child {
-    grid-column: 1 / -1;
-  }
-
-
-  /* REVIEWS */
-
-  .reviews-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .review-card:last-child {
-    grid-column: 1 / -1;
-  }
-
-
-  /* CONTACT */
-
-  .contact-grid {
-    gap: 40px;
-  }
-}
-
-
-/* =========================================
-   TABLET / MOBIEL
+   DEFINITIEVE MOBIELE CORRECTIES
 ========================================= */
 
 @media (max-width: 800px) {
 
-  .container {
-    width: min(
-      calc(100% - 32px),
-      var(--container)
-    );
-  }
-
-
-  /* HERO */
-
-  .hero {
-    min-height: 610px;
-
-    background-position: center;
-  }
-
   .hero-content {
+    width: calc(100% - 32px);
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 75px 0;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-
-  /* DIENSTEN */
-
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
-
-  /* OVER ONS */
-
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-image {
-    order: 2;
-  }
-
-  .about-content {
-    order: 1;
-  }
-
-  .about-image img {
-    height: 430px;
-  }
-
-
-  /* PROJECTEN */
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card:first-child {
-    grid-column: auto;
-  }
-
-  .project-card {
-    min-height: 360px;
-  }
-
-
-  /* REVIEWS */
-
-  .reviews-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .review-card:last-child {
-    grid-column: auto;
-  }
-
-
-  /* CONTACT */
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-
-  /* FOOTER */
-
-  .footer-grid {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-
-/* =========================================
-   TELEFOON
-========================================= */
-
-@media (max-width: 600px) {
-
-  .container {
-    width: calc(100% - 28px);
-  }
-
-
-  /* ALGEMEEN */
-
-  .section,
-  .services,
-  .about,
-  .projects,
-  .reviews,
-  .contact {
-    padding-top: 65px;
-    padding-bottom: 65px;
-  }
-
-  .section-heading {
-    margin-bottom: 34px;
-  }
-
-
-  /* DEMO BALK */
-
-  .demo-bar {
-    padding: 7px 12px;
-
-    font-size: 0.68rem;
-  }
-
-
-  /* HERO */
-
-  .hero {
-    min-height: 560px;
-
-    background:
-      linear-gradient(
-        rgba(5, 45, 27, 0.82),
-        rgba(5, 45, 27, 0.82)
-      ),
-      url("https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1200&q=80")
-      center / cover no-repeat;
-  }
-
-  .hero-content {
-    padding: 60px 0;
-  }
-
-  .hero-badge {
-    margin-bottom: 20px;
-
-    font-size: 0.78rem;
-  }
-
-  .hero h1 {
-    margin-bottom: 20px;
-  }
-
-  .hero p {
-    margin-bottom: 26px;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-  }
-
-  .hero-actions .btn {
-    width: 100%;
-  }
-
-
-  /* USP */
-
-  .usp-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .usp-item {
-    padding: 20px 10px;
-  }
-
-  .usp-item strong {
-    font-size: 0.9rem;
-  }
-
-  .usp-item span {
-    font-size: 0.75rem;
-  }
-
-
-  /* DIENSTEN */
-
-  .service-card img {
-    height: 210px;
-  }
-
-  .service-content {
-    padding: 23px;
-  }
-
-
-  /* OVER ONS */
-
-  .about-grid {
-    gap: 45px;
-  }
-
-  .about-image img {
-    height: 360px;
-
-    box-shadow:
-      10px 10px 0 rgba(115, 196, 88, 0.20);
-  }
-
-
-  /* PROJECTEN */
-
-  .project-card {
-    min-height: 320px;
-  }
-
-  .project-info {
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
-  }
-
-
-  /* REVIEWS */
-
-  .review-card {
-    padding: 26px;
-  }
-
-
-  /* CTA */
-
-  .cta-section {
-    padding: 65px 0;
-  }
-
-  .cta-box {
-    padding: 60px 22px;
-  }
-
-
-  /* CONTACT */
-
-  .contact-form {
-    padding: 22px;
-  }
-
-
-  /* FOOTER */
-
-  .site-footer {
-    padding: 38px 0;
-  }
-}
-
-
-/* =========================================
-   ZEER KLEINE TELEFOON
-========================================= */
-
-@media (max-width: 400px) {
-
-  .usp-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero {
-    min-height: 520px;
-  }
-
-  .about-image img {
-    height: 310px;
-  }
-
-  .project-card {
-    min-height: 290px;
-  }
-
-}
-/* =========================================
-   MOBIELE BREEDTE CORRECTIE
-========================================= */
-
-@media (max-width: 600px) {
-
-  .usp-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .usp-item {
-    min-width: 0;
-    box-sizing: border-box;
-    text-align: center;
-  }
-
-  .usp-item strong,
-  .usp-item span {
-    overflow-wrap: anywhere;
-  }
-
-  .hero-content {
-    min-width: 0;
-    max-width: 100%;
-  }
-
-  .hero-badge {
-    max-width: 100%;
-    white-space: normal;
-  }
-
-  .hero-actions {
-    width: 100%;
-  }
-
-  .hero-actions .btn {
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
-}
-
-@media (max-width: 400px) {
-
-  .usp-grid {
-    grid-template-columns: 1fr;
-  }
-
-}
-/* =========================================
-   CORRECTE MOBIELE INSTELLINGEN
-   010 TUIN & ONDERHOUD
-========================================= */
-
-@media (max-width: 800px) {
-
-  .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    width: 100%;
-  }
-
-  .benefits article {
-    min-width: 0;
-    padding: 22px 12px;
-    text-align: center;
-  }
-
-  .benefits strong,
-  .benefits span {
-    overflow-wrap: anywhere;
-  }
-
-  .hero-content {
-    width: 100%;
-    min-width: 0;
   }
 
   .hero-label {
@@ -461,11 +21,27 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    gap: 14px;
   }
 
   .hero-buttons .button {
     width: 100%;
     max-width: 100%;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .benefits article {
+    min-width: 0;
+    padding: 22px 12px;
+  }
+
+  .benefits strong,
+  .benefits span {
+    overflow-wrap: anywhere;
   }
 
   .about-image {
@@ -478,6 +54,27 @@
 
   .contact-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .hero-content {
+    width: calc(100% - 28px);
+    padding: 60px 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 11vw, 4rem);
+  }
+
+  .hero-label {
+    font-size: 0.78rem;
+  }
+
+  .hero-text {
+    font-size: 1rem;
   }
 
 }
