@@ -1,20 +1,95 @@
+
 /* =========================================
-   DEFINITIEVE MOBIELE CORRECTIES
+   010 TUIN & ONDERHOUD
+   RESPONSIVE.CSS - NIEUWE VERSIE
 ========================================= */
 
+/* TABLET */
+@media (max-width: 1000px) {
+
+  .services-grid,
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-card:first-child {
+    grid-column: auto;
+  }
+
+  .about-grid {
+    gap: 35px;
+  }
+
+  .trust-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-grid {
+    gap: 35px;
+  }
+}
+
+/* MOBIEL EN KLEINE TABLET */
 @media (max-width: 800px) {
 
-.hero-content {
-  flex: 0 1 auto;
-  width: calc(100% - 28px);
-  max-width: 760px;
-  min-width: 0;
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: clip;
+  }
 
-  margin-left: auto;
-  margin-right: auto;
+  .container {
+    width: calc(100% - 32px);
+    max-width: 1200px;
+    margin-inline: auto;
+  }
 
-  padding: 60px 0;
-}
+  .section {
+    padding: 65px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 32px;
+  }
+
+  h1 {
+    font-size: clamp(2.7rem, 10vw, 4rem);
+  }
+
+  h2 {
+    font-size: clamp(2rem, 7vw, 3rem);
+  }
+
+  /* HEADER */
+
+  .nav-container {
+    min-height: 70px;
+  }
+
+  .logo {
+    font-size: clamp(0.95rem, 4vw, 1.2rem);
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .menu-button {
+    display: inline-flex;
+    flex-shrink: 0;
+  }
+
+  /* HERO */
+
+  .hero {
+    min-height: 570px;
+    background-position: center;
+  }
+
+  .hero-content {
+    width: calc(100% - 32px);
+    max-width: 760px;
+    padding: 65px 0;
   }
 
   .hero-label {
@@ -22,106 +97,67 @@
     white-space: normal;
   }
 
+  .hero-text {
+    font-size: 1rem;
+  }
+
   .hero-buttons {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 14px;
+    gap: 12px;
   }
 
   .hero-buttons .button {
     width: 100%;
-    max-width: 100%;
+    text-align: center;
   }
 
+  /* VOORDELEN */
+
   .benefits-grid {
-    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .benefits article {
     min-width: 0;
-    padding: 22px 12px;
+    padding: 22px 10px;
   }
-
-  .benefits strong,
-  .benefits span {
-    overflow-wrap: anywhere;
-  }
-
-  .about-image {
-    min-height: 380px;
-  }
-
-  .trust-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-}
-
-@media (max-width: 600px) {
-
-  .hero-content {
-    width: calc(100% - 28px);
-    padding: 60px 0;
-  }
-
-  .hero h1 {
-    font-size: clamp(2.5rem, 11vw, 4rem);
-  }
-
-  .hero-label {
-    font-size: 0.78rem;
-  }
-
-  .hero-text {
-    font-size: 1rem;
-  }
-
-}
-
-@media (max-width: 400px) {
-
-  .benefits-grid {
-    grid-template-columns: 1fr;
-  }
-
-}
-/* =========================================
-   010 TUIN & ONDERHOUD
-   DEFINITIEVE MOBIELE LAYOUT
-========================================= */
-
-@media (max-width: 800px) {
 
   /* DIENSTEN */
 
   .services-grid {
+    display: grid;
     grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
   }
 
   .service-card {
-    min-width: 0;
     width: 100%;
+    min-width: 0;
+  }
+
+  .service-image {
+    height: 240px;
   }
 
   .service-content {
+    padding: 24px;
     overflow-wrap: break-word;
   }
 
   /* OVER ONS */
 
   .about-grid {
+    display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: 40px;
   }
 
   .about-image {
+    width: 100%;
     min-height: 350px;
+    box-shadow: 10px 10px 0 rgba(115,196,88,.2);
   }
 
   .about-content {
@@ -131,33 +167,50 @@
   /* PROJECTEN */
 
   .projects-grid {
+    display: grid;
     grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
   }
 
-  .project-card {
-    min-height: 350px;
-    min-width: 0;
-  }
-
+  .project-card,
   .project-card:first-child {
     grid-column: auto;
+    width: 100%;
+    min-width: 0;
+    min-height: 350px;
+  }
+
+  .project-info {
+    left: 22px;
+    right: 22px;
+    bottom: 22px;
+    overflow-wrap: break-word;
   }
 
   /* VERTROUWEN */
 
   .trust-cards {
+    display: grid;
     grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .trust-cards article {
+    min-width: 0;
+    padding: 26px;
   }
 
   /* CONTACT */
 
   .contact-grid {
+    display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: 35px;
   }
 
   .contact-form {
     min-width: 0;
+    padding: 24px;
   }
 
   /* FOOTER */
@@ -165,32 +218,36 @@
   .footer-grid {
     flex-direction: column;
     align-items: flex-start;
+    gap: 15px;
   }
 }
 
-@media (max-width: 600px) {
+/* KLEINE TELEFOONS */
+@media (max-width: 400px) {
+
+  .container,
+  .hero-content {
+    width: calc(100% - 28px);
+  }
+
+  .demo-bar {
+    padding: 8px 12px;
+    font-size: 0.7rem;
+  }
+
+  .hero {
+    min-height: 520px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
 
   .about-image {
-    min-height: 300px;
+    min-height: 280px;
   }
 
   .project-card {
-    min-height: 320px;
-  }
-
-  .service-image {
-    height: 220px;
-  }
-
-  .service-content {
-    padding: 24px;
-  }
-
-  .trust-cards article {
-    padding: 26px;
-  }
-
-  .contact-form {
-    padding: 22px;
+    min-height: 300px;
   }
 }
