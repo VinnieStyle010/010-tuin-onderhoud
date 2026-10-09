@@ -251,3 +251,82 @@
     min-height: 300px;
   }
 }
+
+/* =========================================
+   DEFINITIEVE MOBIELE INDELING
+   010 TUIN & ONDERHOUD
+========================================= */
+
+@media screen and (max-width: 800px) {
+
+  /* Diensten netjes onder elkaar */
+  .services-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 24px !important;
+    width: 100% !important;
+  }
+
+  .service-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .service-image {
+    height: 230px;
+  }
+
+  .service-content {
+    padding: 24px;
+  }
+
+  /* Over ons onder elkaar */
+  .about-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 35px !important;
+  }
+
+  .about-image {
+    min-height: 320px;
+  }
+
+  /* Projecten onder elkaar */
+  .projects-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 22px !important;
+  }
+
+  .project-card,
+  .project-card:first-child {
+    grid-column: auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 320px;
+  }
+
+  /* Vertrouwen onder elkaar */
+  .trust-cards {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  /* Contact onder elkaar */
+  .contact-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 35px !important;
+  }
+
+  /* Tekst blijft binnen kaarten */
+  .service-content h3,
+  .service-content p,
+  .about-content,
+  .project-info {
+    overflow-wrap: break-word;
+    min-width: 0;
+  }
+}
